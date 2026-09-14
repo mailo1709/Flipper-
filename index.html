@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#05030f" />
+  <title>NOVA PRISMA — Neon Weltraum Flipper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stage">
+    <div class="frame">
+      <canvas id="table" aria-label="NOVA PRISMA Flipper Spielfeld"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="btnL" class="ctl flip" aria-label="Linker Flipper">◄</button>
+      <div class="mid">
+        <button id="btnStart" class="ctl start">START</button>
+        <button id="btnP" class="ctl plunger" aria-label="Feder spannen">FEDER<br />halten</button>
+      </div>
+      <button id="btnR" class="ctl flip" aria-label="Rechter Flipper">►</button>
+    </div>
+
+    <p class="hint">
+      <b>A</b>/<b>←</b> &amp; <b>D</b>/<b>→</b> Flipper · <b>Leertaste</b> halten &amp; loslassen = Abschuss ·
+      <b>Enter</b> = Start
+    </p>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

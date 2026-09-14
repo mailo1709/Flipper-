@@ -1,0 +1,116 @@
+:root {
+  --blue: #1f6bff;
+  --red: #ff2f5e;
+  --yellow: #ffd233;
+  --bg: #05030f;
+  --panel: #0d0922;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background:
+    radial-gradient(circle at 20% 10%, #1b1140 0%, transparent 45%),
+    radial-gradient(circle at 80% 90%, #2a0d2e 0%, transparent 45%),
+    var(--bg);
+  color: #eef1ff;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.frame {
+  position: relative;
+  padding: 8px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, var(--blue), var(--red) 50%, var(--yellow));
+  box-shadow: 0 0 40px rgba(31, 107, 255, 0.45), 0 0 80px rgba(255, 47, 94, 0.25);
+  max-height: min(78vh, 92vw * 1.692);
+}
+
+canvas {
+  display: block;
+  border-radius: 12px;
+  background: #05030f;
+  height: min(74vh, 88vw * 1.692);
+  width: auto;
+  max-width: 92vw;
+  aspect-ratio: 520 / 880;
+}
+
+.controls {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  width: min(92vw, 520px);
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.ctl {
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-weight: 800;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.05s ease, filter 0.1s ease;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+.ctl:active { transform: translateY(3px); box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35); filter: brightness(1.25); }
+
+.flip {
+  flex: 0 0 88px;
+  font-size: 34px;
+  background: linear-gradient(180deg, #ff5c7e, var(--red));
+}
+
+.start {
+  background: linear-gradient(180deg, #5aa0ff, var(--blue));
+  padding: 10px;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.plunger {
+  background: linear-gradient(180deg, #fff08a, var(--yellow));
+  color: #3a2a00;
+  padding: 10px;
+  font-size: 15px;
+  line-height: 1.05;
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: #9fb0ff;
+  text-align: center;
+  max-width: 520px;
+  line-height: 1.5;
+}
+.hint b { color: var(--yellow); }
+
+/* Auf grossen Bildschirmen braucht man die Touch-Buttons weniger prominent */
+@media (min-width: 900px) and (pointer: fine) {
+  .controls { opacity: 0.85; }
+}
