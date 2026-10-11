@@ -2,7 +2,7 @@ name: Deploy NOVA PRISMA to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "claude/moderne-flipper-app-7zv3hi"]
   workflow_dispatch:
 
 permissions:
