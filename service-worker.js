@@ -1,10 +1,13 @@
-/* NOVA PRISMA – Service Worker: App-Shell cachen, offline spielbar */
-const CACHE = 'nova-prisma-v2';
+/* NOVA ARCADE – Service Worker: App-Shell cachen, offline spielbar */
+const CACHE = 'nova-arcade-v3';
 const ASSETS = [
   './',
   './index.html',
   './styles.css',
-  './game.js',
+  './app.js',
+  './games/pinball.js',
+  './games/breakout.js',
+  './games/snake.js',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png',
@@ -14,14 +17,12 @@ const ASSETS = [
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
 });
-
 self.addEventListener('activate', (e) => {
   e.waitUntil(
     caches.keys().then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
-
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
   e.respondWith(

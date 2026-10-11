@@ -1,7 +1,7 @@
 {
-  "name": "NOVA PRISMA — Neon Weltraum Flipper",
-  "short_name": "NOVA PRISMA",
-  "description": "Moderner Neon-Flipper mit eigener Physik und 30 Leveln.",
+  "name": "NOVA ARCADE",
+  "short_name": "NOVA ARCADE",
+  "description": "Mini-Arcade mit Flipper (40 Level, Retro bis Neon), Breakout und Snake. Schwierigkeitsstufen, Skins und Bestenliste.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

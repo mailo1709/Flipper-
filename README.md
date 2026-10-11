@@ -1,98 +1,70 @@
-# 🌌 NOVA PRISMA — Neon Weltraum Flipper · 30 Level
+# 🕹️ NOVA ARCADE
 
-Ein moderner, selbstgebauter **Flipper (Pinball)** im Neon-Weltraum-Look mit
-**30 Leveln**. Läuft komplett im Browser — kein Download nötig — und lässt sich
-als **App auf dem Handy installieren** (PWA, offline spielbar).
-Nur HTML, CSS und eine eigene 2D-Physik-Engine in reinem JavaScript. Kein Framework.
+Eine kleine **Mini-Arcade** fürs Handy — ein Startmenü mit mehreren Spielen,
+Schwierigkeitsstufen, Skins und einer Bestenliste. Läuft komplett im Browser,
+lässt sich als **App installieren** (PWA) und funktioniert **offline**.
+Nur HTML, CSS und reines JavaScript mit eigener Physik. Kein Framework, kein Build.
 
-> **Ziel:** Jedes Level hat ein eigenes Ziel (Punkte erreichen, alle Ziele löschen
-> oder **PRISMA** zünden). Schaffst du es, geht's ins nächste Level — bis du in
-> **Level 30 „PRISMA GALAXIE"** die Galaxie rettest.
+## 🎮 Die Spiele
 
-## 🎮 Steuerung
+| Spiel | Beschreibung |
+| --- | --- |
+| **🔴 NOVA PRISMA** | Flipper mit **40 Leveln** und eigener Physik. Startet wie ein echter alter Flipper aus der Spielbude (Retro-Look, Scanlines) und wird mit jedem Abschnitt **moderner** — über 16-Bit und Neon bis zum futuristischen Hyper-Holo. Bumper, Slingshots, Targets, Pegs, umlaufende Asteroiden, rotierende Windräder, Wurmlöcher, Schwarze Löcher und das PRISMA-Multiball. |
+| **🧱 BLOCK NOVA** | Breakout/Arkanoid — Blöcke zerlegen, Wellen überstehen, Paddle per Wischen oder Tasten. |
+| **🟢 GRID SNAKE** | Der Klassiker. Wisch-Steuerung aufs Handy, D-Pad oder Pfeiltasten. |
 
-| Aktion | Tastatur | Touch (Handy) |
-| --- | --- | --- |
-| Linker Flipper | `A` oder `←` | Button ◄ links |
-| Rechter Flipper | `D` oder `→` | Button ► rechts |
-| Feder spannen & abschießen | `Leertaste` / `↓` **halten und loslassen** | Button **FEDER** halten |
-| Start / neue Runde | `Enter` | **START** |
-| Weiter beim höchsten Level | `C` | — |
+### Die 4 Epochen von NOVA PRISMA (wird immer moderner)
+1. **Level 1–8 · „Spielbude '74"** – Retro: warmes Bernstein/Holz, flache Bumper, CRT-Scanlines, nur die klassischen Elemente.
+2. **Level 9–18 · „16-Bit Arcade"** – knalligere Farben, erste Pegs & Asteroiden.
+3. **Level 19–30 · „Neon Modern"** – voller Neon-Glow, Wurmlöcher, Windräder, Schwarze Löcher.
+4. **Level 31–40 · „Hyper Holo"** – holografisches Cyan/Magenta/Lime, alles schneller und dichter.
 
-Je länger du die Feder hältst, desto stärker wird die Kugel abgeschossen.
-Pro Level hast du **3 Kugeln**. Schaffst du das Levelziel, geht's weiter; gehen
-alle Kugeln verloren, kannst du das Level erneut starten. Dein höchstes Level
-und der Highscore werden im Browser gespeichert.
+## ⚙️ Features
 
-## 🪐 Hindernisse (selbst ausgedacht)
+- **3 Schwierigkeitsstufen** (Chill / Normal / Hardcore) – ändern Schwerkraft, Anzahl Kugeln/Leben, Tempo der Hindernisse und die Levelziele.
+- **5 Kugel-Skins** (Chrom, Lava, Toxic, Gold, Plasma) – färben Ball, Schweif und Akzente.
+- **Bestenliste** pro Spiel (Top 10) mit Namen. Lokal gespeichert → „Pass & Play" gegen Freunde am selben Gerät.
+- **Fortschritt & Highscore** werden im Browser gespeichert; bei NOVA PRISMA steigst du mit „Weiter" wieder im höchsten Level ein.
+- **Installierbar** als App, Vollbild, **offline** spielbar.
 
-- **Bumper-Kerne** — Azur (blau), Inferno (rot), Solaris (gelb), stoßen kräftig ab
-- **Slingshots** — die Prallflächen über den Flippern
-- **Drop-Targets** — Ziele, die umklappen
-- **Pegs** — kleine Prellstifte (Plinko-Style)
-- **Asteroiden** — umlaufende Felsbrocken, die die Kugel im Flug treffen
-- **Windräder** — rotierende Neon-Arme, die die Kugel herumschleudern
-- **Wurmlöcher** — teleportieren die Kugel von einem Ende zum anderen
-- **Schwerkraftfallen / Schwarze Löcher** — ziehen die Kugel an und krümmen ihre Bahn
-- **PRISMA** — alle Kerne + alle Ziele zünden → Riesen-Bonus, Multiplikator & **Multiball**
+## 🎯 Steuerung
 
-Mit steigendem Level kommen mehr und schnellere Hindernisse dazu
-(Sektoren von „Startrampe" bis „Supernova" und „PRISMA GALAXIE").
+- **Flipper:** `A`/`←` & `D`/`→` oder die Buttons ◄ ► · **Feder:** `Leertaste`/`↓` halten & loslassen oder Button „FEDER".
+- **Breakout:** Paddle per Wischen/Maus oder ◄ ► · Abschuss per Tipp/`Leertaste`.
+- **Snake:** Wischen, D-Pad oder Pfeiltasten/`WASD`.
 
-## 📱 Als App aufs Handy holen
+## 📱 Als App aufs Handy
 
-1. Öffne die Spiel-URL (siehe unten „GitHub Pages") im **Handy-Browser**.
-2. **iPhone (Safari):** Teilen-Symbol → **„Zum Home-Bildschirm"**.
-   **Android (Chrome):** Menü ⋮ → **„App installieren"** bzw. „Zum Startbildschirm hinzufügen".
-3. Fertig — NOVA PRISMA liegt mit eigenem Icon auf dem Home-Bildschirm,
-   startet im Vollbild und funktioniert auch offline.
+1. Spiel-URL (siehe „GitHub Pages") im **Handy-Browser** öffnen.
+2. **iPhone (Safari):** Teilen → **„Zum Home-Bildschirm"**. **Android (Chrome):** Menü ⋮ → **„App installieren"**.
+3. Fertig — eigenes Icon, Vollbild, offline.
 
-## 🚀 Spielen & Testen
+## 🚀 Testen & Veröffentlichen
 
-### Sofort lokal testen
-`index.html` einfach im Browser (am PC) öffnen — läuft direkt.
-*(Hinweis: Der Offline-Modus/Service-Worker aktiviert sich nur über `https`
-bzw. GitHub Pages, nicht über `file://` — das Spiel selbst läuft trotzdem.)*
-
-### Über GitHub Pages (für den Handy-Zugriff)
-Repo → **Settings → Pages** → *Source:* **Deploy from a branch** →
-Branch auf diesen Branch stellen, Ordner `/ (root)` → **Save**.
-Nach ~1 Minute ist das Spiel erreichbar unter:
-`https://<dein-user>.github.io/<repo>/`
-Diese URL auf dem Handy öffnen und wie oben als App installieren.
-
-*(Alternativ veröffentlicht der Workflow `.github/workflows/pages.yml` das Spiel
-automatisch beim Push auf `main`, wenn unter Settings → Pages „GitHub Actions"
-als Quelle gewählt ist.)*
+- **Schnell am PC:** Repo als ZIP laden (grüner `Code`-Button → `Download ZIP`), entpacken, `index.html` öffnen.
+- **Über GitHub Pages (für Handy & Offline-Modus):** Repo → **Settings → Pages** → *Source:* **Deploy from a branch** → Branch `claude/moderne-flipper-app-7zv3hi`, Ordner `/ (root)` → **Save**. Nach ~1 Min erreichbar unter `https://<user>.github.io/<repo>/`.
 
 ## 🗂️ Aufbau
 
 ```
-index.html             – Seite, Bedienelemente, PWA-Einbindung
-styles.css             – Neon-Rahmen, Layout, Touch-Buttons
-game.js                – Physik-Engine, 30 Level, Hindernisse, Rendering
-manifest.webmanifest   – App-Metadaten (Name, Icons, Vollbild)
+index.html             – Hub-Shell (Menü, Stage, Bestenliste, Einstellungen)
+app.js                 – Hub-Logik: Navigation, Schwierigkeit, Skins, Bestenliste
+styles.css             – Layout & Theming
+games/pinball.js       – NOVA PRISMA (40 Level, 4 Epochen, Physik)
+games/breakout.js      – BLOCK NOVA
+games/snake.js         – GRID SNAKE
+manifest.webmanifest   – App-Metadaten
 service-worker.js      – Offline-Cache
 icon-192 / 512 / 180   – App-Icons
 ```
 
-## 📈 Punkte
+## 💡 Ausblick
 
-| Ereignis | Punkte |
-| --- | --- |
-| Peg | 25 |
-| Slingshot | 50 |
-| Windrad-Arm | 75 |
-| Bumper (ungezündet / gezündet) | 100 / 250 |
-| Asteroid | 120 |
-| Wurmloch | 200 |
-| Drop-Target | 500 |
-| Alle Targets | +1.500 |
-| **PRISMA** | +5.000, Multiplikator +1, Multiball |
-| Level geschafft | +2.000 (steigt pro Level) |
-
-Alle Punkte werden mit dem aktuellen Multiplikator multipliziert.
+Online-Bestenliste und echtes Mehrspieler (gegen Freunde über Internet) brauchen
+einen kleinen Server/Backend — das lokale Pass-&-Play ist der Start. Weitere
+Minigames lassen sich einfach als `games/<name>.js` mit
+`window.NA.register(...)` ergänzen.
 
 ---
 
-Viel Spaß — rette die PRISMA GALAXIE. 🔵🔴🟡
+Viel Spaß in der NOVA ARCADE. 🔵🔴🟡
