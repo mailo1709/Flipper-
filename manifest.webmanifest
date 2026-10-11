@@ -1,0 +1,16 @@
+{
+  "name": "NOVA PRISMA — Neon Weltraum Flipper",
+  "short_name": "NOVA PRISMA",
+  "description": "Moderner Neon-Flipper mit eigener Physik und 30 Leveln.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#05030f",
+  "theme_color": "#05030f",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

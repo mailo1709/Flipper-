@@ -2,9 +2,19 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <meta name="theme-color" content="#05030f" />
   <title>NOVA PRISMA — Neon Weltraum Flipper</title>
+
+  <!-- PWA / Installierbar als App -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="NOVA PRISMA" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
+  <link rel="icon" href="icon-192.png" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -24,10 +34,18 @@
 
     <p class="hint">
       <b>A</b>/<b>←</b> &amp; <b>D</b>/<b>→</b> Flipper · <b>Leertaste</b> halten &amp; loslassen = Abschuss ·
-      <b>Enter</b> = Start
+      <b>Enter</b> = Start · <b>C</b> = weiter
     </p>
   </div>
 
   <script src="game.js"></script>
+  <script>
+    // Service Worker für Offline-Betrieb (App funktioniert ohne Netz, sobald einmal geladen)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').catch(() => {});
+      });
+    }
+  </script>
 </body>
 </html>
