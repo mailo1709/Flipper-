@@ -1,5 +1,5 @@
 /* NOVA ARCADE – Service Worker: App-Shell cachen, offline spielbar */
-const CACHE = 'nova-arcade-v3';
+const CACHE = 'nova-arcade-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -8,6 +8,8 @@ const ASSETS = [
   './games/pinball.js',
   './games/breakout.js',
   './games/snake.js',
+  './games/pong.js',
+  './games/minigolf.js',
   './manifest.webmanifest',
   './icon-192.png',
   './icon-512.png',

@@ -9,15 +9,18 @@ Nur HTML, CSS und reines JavaScript mit eigener Physik. Kein Framework, kein Bui
 
 | Spiel | Beschreibung |
 | --- | --- |
-| **🔴 NOVA PRISMA** | Flipper mit **40 Leveln** und eigener Physik. Startet wie ein echter alter Flipper aus der Spielbude (Retro-Look, Scanlines) und wird mit jedem Abschnitt **moderner** — über 16-Bit und Neon bis zum futuristischen Hyper-Holo. Bumper, Slingshots, Targets, Pegs, umlaufende Asteroiden, rotierende Windräder, Wurmlöcher, Schwarze Löcher und das PRISMA-Multiball. |
+| **🔴 NOVA PRISMA** | Flipper mit **50 Leveln** und eigener Physik. Startet wie ein echter alter Flipper aus der Spielbude (Retro-Look, Scanlines) und wird mit jedem Abschnitt **moderner** — über 16-Bit, Neon und Hyper-Holo bis zur futuristischen Quantum-Epoche. Bumper, Slingshots, Targets, Pegs, umlaufende Asteroiden, rotierende Windräder, Wurmlöcher, Schwarze Löcher und das PRISMA-Multiball. |
 | **🧱 BLOCK NOVA** | Breakout/Arkanoid — Blöcke zerlegen, Wellen überstehen, Paddle per Wischen oder Tasten. |
 | **🟢 GRID SNAKE** | Der Klassiker. Wisch-Steuerung aufs Handy, D-Pad oder Pfeiltasten. |
+| **🏓 NEON PONG** | Tischtennis mit Balken — du unten gegen die CPU oben. Paddle per Wischen oder ◄ ►, erster auf 7 Punkte gewinnt. |
+| **⛳ NOVA GOLF** | Minigolf über **9 Bahnen** mit Hindernissen. Ziehen & loslassen zum Schlagen — je weniger Schläge, desto mehr Punkte. |
 
-### Die 4 Epochen von NOVA PRISMA (wird immer moderner)
+### Die 5 Epochen von NOVA PRISMA (wird immer moderner)
 1. **Level 1–8 · „Spielbude '74"** – Retro: warmes Bernstein/Holz, flache Bumper, CRT-Scanlines, nur die klassischen Elemente.
 2. **Level 9–18 · „16-Bit Arcade"** – knalligere Farben, erste Pegs & Asteroiden.
 3. **Level 19–30 · „Neon Modern"** – voller Neon-Glow, Wurmlöcher, Windräder, Schwarze Löcher.
 4. **Level 31–40 · „Hyper Holo"** – holografisches Cyan/Magenta/Lime, alles schneller und dichter.
+5. **Level 41–50 · „Quantum 3000"** – Vektorgitter, 5-Arm-Windräder, Doppel-Schwarzlöcher: die modernste Stufe.
 
 ## ⚙️ Features
 
@@ -50,9 +53,11 @@ Nur HTML, CSS und reines JavaScript mit eigener Physik. Kein Framework, kein Bui
 index.html             – Hub-Shell (Menü, Stage, Bestenliste, Einstellungen)
 app.js                 – Hub-Logik: Navigation, Schwierigkeit, Skins, Bestenliste
 styles.css             – Layout & Theming
-games/pinball.js       – NOVA PRISMA (40 Level, 4 Epochen, Physik)
+games/pinball.js       – NOVA PRISMA (50 Level, 5 Epochen, Physik)
 games/breakout.js      – BLOCK NOVA
 games/snake.js         – GRID SNAKE
+games/pong.js          – NEON PONG
+games/minigolf.js      – NOVA GOLF
 manifest.webmanifest   – App-Metadaten
 service-worker.js      – Offline-Cache
 icon-192 / 512 / 180   – App-Icons

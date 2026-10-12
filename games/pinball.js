@@ -23,8 +23,10 @@
       wall: '#3a6fd8', blue: '#2f7bff', red: '#ff3b5e', yellow: '#ffd233', scan: 0.12, glow: false, retro: false };
     if (n <= 30) return { name: 'Neon Modern', bg0: '#05030f', bg1: '#120a2e',
       wall: '#3a4b8f', blue: '#1f6bff', red: '#ff2f5e', yellow: '#ffd233', scan: 0, glow: true, retro: false };
-    return { name: 'Hyper Holo', bg0: '#02121a', bg1: '#06283a',
+    if (n <= 40) return { name: 'Hyper Holo', bg0: '#02121a', bg1: '#06283a',
       wall: '#1fd3c9', blue: '#17e0ff', red: '#ff46c3', yellow: '#b9ff3d', scan: 0, glow: true, retro: false };
+    return { name: 'Quantum 3000', bg0: '#000308', bg1: '#041018',
+      wall: '#9ff7ff', blue: '#00f0ff', red: '#ff2d95', yellow: '#d6ff00', scan: 0, glow: true, retro: false, grid: true };
   }
   function eraName(n) { return era(n).name; }
 
@@ -32,9 +34,10 @@
     'Jahrmarkt', 'Münzeinwurf', 'Groschengrab', 'Kirmeslicht', 'Flipperkönig', 'Tilt!', 'Bronzekugel', 'Replay',
     'Pixelstart', 'Chiptune', 'Highscore', 'Bonusrunde', 'Turbo', 'Extraball', 'Combo', 'Jackpot', 'Arcade-Halle', 'Endgegner',
     'Neon City', 'Laserbahn', 'Hologramm', 'Rotorfeld', 'Pulsar', 'Prisma-Nebel', 'Gravitationssee', 'Schwarzes Loch', 'Ringwelt', 'Trümmerzone', 'Nova-Kern', 'Supernova',
-    'Holo-Deck', 'Quantenfeld', 'Singularität', 'Zeitriss', 'Sternenschmiede', 'Antimaterie', 'Wurmloch-Nest', 'Chaos-Matrix', 'Omega', 'PRISMA GALAXIE'
+    'Holo-Deck', 'Quantenfeld', 'Singularität', 'Zeitriss', 'Sternenschmiede', 'Antimaterie', 'Wurmloch-Nest', 'Chaos-Matrix', 'Omega', 'PRISMA GALAXIE',
+    'Tachyon', 'Hyperraum', 'Vektorfeld', 'Neuronetz', 'Datenstrom', 'Kryostase', 'Null-Punkt', 'Ereignishorizont', 'Unendlich', 'OMEGA PRISMA'
   ];
-  const LEVEL_COUNT = 40;
+  const LEVEL_COUNT = 50;
 
   function baseBumpers() {
     return [{ x: 175, y: 300, core: 'blue' }, { x: 345, y: 300, core: 'red' }, { x: 260, y: 210, core: 'yellow' }];
@@ -69,6 +72,13 @@
         cfg.asteroids = [{ cx: 150, cy: 440, orbitR: 48, r: 14, speed: 2.1 }, { cx: 370, cy: 440, orbitR: 48, r: 14, speed: -2.1 }];
         cfg.wells = [{ x: 150, y: 560, radius: 95, strength: 1150 }, { x: 370, y: 560, radius: 95, strength: 1150 }];
         cfg.wormholes = [{ a: { x: 86, y: 300 }, b: { x: 435, y: 300 }, r: 18 }];
+      }
+      if (n >= 41) {
+        cfg.bumpers = [{ x: 175, y: 250, core: 'blue' }, { x: 345, y: 250, core: 'red' }];
+        cfg.windmills = [{ cx: 260, cy: 345, arms: 5, len: 66, speed: 2.5 }];
+        cfg.asteroids = [{ cx: 260, cy: 440, orbitR: 100, r: 15, speed: 2.2 }, { cx: 260, cy: 440, orbitR: 56, r: 12, speed: -2.7 }];
+        cfg.wells = [{ x: 150, y: 580, radius: 92, strength: 1250 }, { x: 370, y: 580, radius: 92, strength: 1250 }];
+        cfg.wormholes = [{ a: { x: 86, y: 290 }, b: { x: 435, y: 290 }, r: 18 }];
       }
       if (n % 6 === 0)      { cfg.goalType = 'prisma';  cfg.goalValue = Math.max(1, Math.floor(n / 6)); }
       else if (n % 6 === 4) { cfg.goalType = 'targets'; cfg.goalValue = 1 + Math.floor(n / 8); }
@@ -135,7 +145,7 @@
         blue: e.blue, red: e.red, yellow: e.yellow,
         blueHi: lighten(e.blue, 0.45), redHi: lighten(e.red, 0.45), yelHi: lighten(e.yellow, 0.45),
         rock: '#9aa6d6', rockHi: '#cdd6ff', worm: '#b85cff', wormHi: '#e0a6ff', text: '#eef1ff',
-        scan: e.scan, glow: e.glow, retro: e.retro, ball: skin.ball, trail: skin.trail
+        scan: e.scan, glow: e.glow, retro: e.retro, grid: e.grid, ball: skin.ball, trail: skin.trail
       };
       buildTable();
       const os = diff.obSpeed;
@@ -338,6 +348,7 @@
     function bg() {
       const g = ctx.createLinearGradient(0, 0, 0, H); g.addColorStop(0, pal.bg1); g.addColorStop(1, pal.bg0); ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
       if (pal.retro) { ctx.save(); ctx.globalAlpha = 0.08; ctx.strokeStyle = pal.wall; ctx.lineWidth = 1; for (let x = 0; x < W; x += 30) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); } ctx.restore(); }
+      else if (pal.grid) { ctx.save(); ctx.globalAlpha = 0.1; ctx.strokeStyle = pal.blue; ctx.lineWidth = 1; for (let x = 0; x <= W; x += 40) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke(); } for (let y = 0; y <= H; y += 40) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke(); } ctx.restore(); }
       else { ctx.save(); for (let i = 0; i < 60; i++) { ctx.globalAlpha = 0.15 + (i % 5) * 0.12; ctx.fillStyle = i % 3 === 0 ? pal.blueHi : i % 3 === 1 ? pal.yelHi : '#fff'; ctx.fillRect(i * 97 % W, i * 173 % H, 2, 2); } ctx.restore(); }
     }
     function table() {
@@ -388,7 +399,7 @@
     function title() {
       ctext('NOVA', 300, pal.yellow, 'bold 56px "Segoe UI", system-ui, sans-serif');
       ctext('PRISMA', 358, pal.blueHi, 'bold 56px "Segoe UI", system-ui, sans-serif');
-      ctext('40 LEVEL · von Retro bis Hyper-Neon', 420, pal.text, 'bold 15px "Segoe UI", system-ui, sans-serif');
+      ctext(LEVEL_COUNT + ' LEVEL · von Retro bis Quantum', 420, pal.text, 'bold 15px "Segoe UI", system-ui, sans-serif');
       ctext(diff.name + '-Modus', 450, pal.wallHi, '13px "Segoe UI", system-ui, sans-serif');
       button(START_BTN, '▶  LEVEL 1', pal.yellow);
       if (game.maxLevel > 1) button(CONT_BTN, 'WEITER · Level ' + Math.min(game.maxLevel, LEVEL_COUNT), pal.redHi);
@@ -416,7 +427,7 @@
       if (game.state !== 'title') hud();
       if (game.state === 'title') title();
       if (game.state === 'over') overlay('GAME OVER', pal.red, 'Level ' + (game.levelIdx + 1) + ' erneut');
-      if (game.state === 'win') overlay('GEWONNEN!', pal.yellow, 'Alle 40 Level — Legende!');
+      if (game.state === 'win') overlay('GEWONNEN!', pal.yellow, 'Alle ' + LEVEL_COUNT + ' Level — Legende!');
       scan();
       ctx.restore();
       raf = requestAnimationFrame(loop);
@@ -445,5 +456,5 @@
     return { start, stop };
   }
 
-  window.NA.register('pinball', { name: 'NOVA PRISMA', tag: 'Flipper · 40 Level · Retro → Neon', emoji: '🔴', make: makePinball });
+  window.NA.register('pinball', { name: 'NOVA PRISMA', tag: 'Flipper · 50 Level · Retro → Quantum', emoji: '🔴', make: makePinball });
 })();
