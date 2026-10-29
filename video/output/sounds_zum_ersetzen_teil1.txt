@@ -1,14 +1,14 @@
-SOUNDS ZUM ERSETZEN (Startzeit mm:ss.hh | Effekt)
+SOUNDS ZUM ERSETZEN – Teil 1 (Startzeit mm:ss.hh | Effekt)
 
 00:00.00 | Grundspur: tiefer Drone, leise, durchgehend bis 00:41.00
 00:00.00 | Hit (tiefer Schlag) – Szene 1
 00:02.50 | Hit (tiefer Schlag) – Szene 3
 00:07.05 | Piep (Handy/Funk) – Szene 7
 00:08.00 | Herzschlag (Doppel-Puls) – Szene 8
-00:14.50 | Radio-Rauschen bis 00:16.50 – Szene 14–15
+00:14.50 | Funk-/Radio-Rauschen bis 00:16.50 – Szene 14–15
 00:17.50 | Klopfen an der Tür (3x) – Szene 17
 00:18.50 | Herzschlag (Doppel-Puls) – Szene 18
-00:21.50 | Funk-Rauschen bis 00:32.00 – Szene 21–29
+00:21.50 | Funk-/Radio-Rauschen bis 00:32.00 – Szene 21–29
 00:26.00 | Hit (tiefer Schlag) – Szene 25
 00:32.00 | Herzschlag (Doppel-Puls) – Szene 30
 00:33.05 | Piep (Handy/Funk) – Szene 31

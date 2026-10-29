@@ -1,0 +1,41 @@
+BILD-ZU-VIDEO-PROMPTS – Teil 1
+Bild: teil1_bilder_fuer_ki/szene_XX.png  ·  Format 9:16  ·  Länge: kürzeste Option (5 s)
+★ = lohnt sich für KI-Bewegung. Ohne ★ reicht der Zoom aus dem fertigen Video.
+Vor jeden Prompt setzen (Stil-Satz):
+Flat 2D cartoon animation, keep the exact art style, colors, characters and framing of the image. Subtle, smooth motion only. No new objects, no text, no camera cuts.
+
+★ Szene 01 (1.5 s) | The boy slowly raises his eyes from the phone, frightened, phone light flickers softly on his face
+★ Szene 02 (1 s) | The boy presses buttons on the gamepad, game on the monitor moves, screen glow pulses
+  Szene 03 (1 s) | Camera shakes once, the boy flinches
+★ Szene 04 (1 s) | The boy flips the light switch twice, nothing happens, he tilts his head
+  Szene 05 (1 s) | Slow push-in through the window, curtains sway slightly, stars twinkle
+★ Szene 06 (1.5 s) | Slow pan across the dark skyline, water ripples gently, moon glows
+  Szene 07 (1 s) | Phone screen flickers, red X pulses
+  Szene 08 (1 s) | Battery icon pulses softly
+  Szene 09 (1 s) | Fridge door swings open a little more, the boy leans forward
+★ Szene 10 (1 s) | Single water drops fall from the tap, the boy turns the handle
+★ Szene 11 (1 s) | Candle flame flickers and lights up, warm light spreads, the boy breathes out
+  Szene 12 (1 s) | Thought bubble pops up and wobbles, the boy looks up
+★ Szene 13 (1.5 s) | The hand cranks the radio handle in circles
+  Szene 14 (1 s) | Turquoise sound waves pulse outward from the radio
+  Szene 15 (1 s) | Speaker glows and vibrates with turquoise light
+★ Szene 16 (1 s) | Candle flickers, the boy pulls the blanket tighter
+★ Szene 17 (1 s) | The door shakes slightly from knocking
+★ Szene 18 (1 s) | The boy freezes and trembles, eyes widen
+  Szene 19 (1 s) | Fisheye view drifts slowly down the empty dark hallway
+★ Szene 20 (1 s) | Red light pulses through the gap of the cardboard box
+  Szene 21 (1 s) | Red LED on the walkie-talkie blinks, slow push-in
+★ Szene 22 (1 s) | The boy lifts the walkie-talkie closer, red LED blinks
+  Szene 23 (1.5 s) | Slow push-in into the empty battery compartment
+★ Szene 24 (1 s) | Walkie-talkie vibrates, zigzag sound waves pulse
+★ Szene 25 (1 s) | The face reacts in shock, sweat drops fly, rays pulse
+  Szene 26 (1.5 s) | Red X on the map pulses, river shimmers
+★ Szene 27 (1 s) | Tiny people with flashlights walk to the right through the street
+★ Szene 28 (1 s) | Crowd walks away from camera toward the river, flashlight beams sway
+  Szene 29 (1.5 s) | Red LED blinks fast, red light pulses
+★ Szene 30 (1 s) | The boy presses himself against the wall and slides back
+  Szene 31 (1 s) | Battery outline blinks red
+★ Szene 32 (1 s) | Finger hovers and trembles above the side button
+  Szene 33 (2 s) | Both sides: subtle movement, letters A and B pulse
+  Szene 34 (1.5 s) | Red clock pulses (use original, countdown is rendered)
+  Szene 35 (2.5 s) | Box glows softly (use original)

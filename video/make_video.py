@@ -47,7 +47,11 @@ def rgb(c):
 
 # ---------------------------------------------------------------- canvas
 class Cv:
-    def __init__(self, top=NAVY1, bot=NAVY0):
+    def __init__(self, top=NAVY1, bot=NAVY0, transparent=False):
+        if transparent:
+            self.img = Image.new("RGBA", (W * S, H * S), (0, 0, 0, 0))
+            self.d = ImageDraw.Draw(self.img)
+            return
         g = Image.new("RGB", (1, 256))
         t, b = rgb(top), rgb(bot)
         for i in range(256):
@@ -206,6 +210,7 @@ def caption(c, txt, y=1382, size=100, maxw=930):
 POSES = {
     "stand": ((-135, -340, -140, -230), (135, -340, 140, -230)),
     "phone": ((-135, -340, -140, -230), (120, -330, 38, -452)),
+    "radio": ((-135, -340, -140, -230), (175, -330, 165, -480)),
     "hold": ((-150, -320, -48, -385), (150, -320, 48, -385)),
     "reach": ((-135, -340, -140, -230), (185, -490, 255, -560)),
     "tap": ((-135, -340, -140, -230), (165, -330, 215, -420)),
@@ -650,7 +655,7 @@ def s11(c, on):
     c.glow(fx, fy, 430, "#ffa340", 85)
 
 
-def s12(c, on):
+def s12(c, on, bubble="radio"):
     room(c)
     draw_jonas(c, 360, 1250, 1.05, "think", "think", look=(6, -7))
     c.ell(560, 560, 20, fill="#e9eefc")
@@ -659,7 +664,10 @@ def s12(c, on):
         c.ell(780 + dx, 390 + dy, r, fill="#e9eefc", ol=OL, w=8)
     for dx, dy, r in ((0, 0, 150), (-120, 30, 95), (120, 30, 95), (-60, -80, 100), (70, -80, 100), (0, 90, 110)):
         c.ell(780 + dx, 390 + dy, r - 8, fill="#e9eefc", w=0)
-    draw_radio(c, 765, 415, 0.36)
+    if bubble == "radio":
+        draw_radio(c, 765, 415, 0.36)
+    else:
+        c.text(780, 395, bubble, font(ANTON, 200), RED, stroke=7)
     c.dark(120, [(540, 600, 500, 40)])
 
 
@@ -713,7 +721,7 @@ def s16(c, on):
     c.glow(fx, fy, 380, "#ffa340", 80)
 
 
-def s17(c, on):
+def s17(c, on, handle=False):
     c.rect(0, 0, W, 1250, fill=WALL, w=0)
     c.rect(0, 1250, W, H, fill=FLOOR, w=0)
     c.line([(0, 1250), (W, 1250)], OL, 8)
@@ -723,8 +731,16 @@ def s17(c, on):
     c.rect(360, 830, 720, 1180, fill="#4d3424", w=6, r=8)
     c.ell(540, 600, 16, fill="#c9b27a", w=5)
     c.rect(680, 780, 760, 810, fill="#c9b27a", r=12, w=6)
-    c.rect(690, 790, 712, 850, fill="#c9b27a", r=8, w=5)
-    for cx, cy, sgn in ((880, 620, 1), (880, 880, 1), (200, 760, -1)):
+    if handle:
+        c.rect(690, 790, 712, 850, fill="#c9b27a", r=8, w=5)
+        c.poly([(680, 800), (760, 830), (752, 856), (672, 826)], fill="#c9b27a", w=6)
+        for r in (70, 105):
+            c.arc(700, 800, r, 20, 80, YEL, 9)
+        bursts = ()
+    else:
+        c.rect(690, 790, 712, 850, fill="#c9b27a", r=8, w=5)
+        bursts = ((880, 620, 1), (880, 880, 1), (200, 760, -1))
+    for cx, cy, sgn in bursts:
         for a in (-35, 0, 35):
             rad = math.radians(a)
             x0 = cx + sgn * 20 * math.cos(rad)
@@ -832,9 +848,13 @@ def s23(c, on):
 
 
 def s24(c, on):
-    f = draw_funk(c, 540, 870, 1.45, led=True)
+    funk_waves(c, True, (YEL, RED, YEL))
+
+
+def funk_waves(c, led, cols):
+    f = draw_funk(c, 540, 870, 1.45, led=led)
     for sgn in (-1, 1):
-        for i, col in enumerate((YEL, RED, YEL)):
+        for i, col in enumerate(cols):
             bx = 540 + sgn * (190 + i * 85)
             pts = [(bx + sgn * (18 if k % 2 else -18) + sgn * abs(k - 3) * -8, 640 + k * 75) for k in range(7)]
             c.line(pts, OL, 22)
@@ -936,29 +956,32 @@ def s30(c, on):
     c.dark(175, [(460, 700, 420, 50), (860, 1060, 150, 0)])
 
 
-def s31(c, on):
+def s31(c, on, pct=4):
     c.glow(540, 820, 420, RED, 70 if on else 20)
-    draw_battery(c, 540, 820, 4, RED, on)
+    draw_battery(c, 540, 820, pct, RED, on)
     if on:
         c.text(540, 1080, "AKKU FAST LEER", font(SANS, 40), RED, stroke=3)
 
 
-def s32(c, on):
+def s32(c, on, pressed=False):
     f = draw_funk(c, 600, 880, 1.5, led=True)
     px, py = f["ptt"]
+    tip = px - 24 if pressed else px - 60
     c.line([(-80, 1200), (230, 990)], OL, 140)
     c.line([(-80, 1200), (230, 990)], HOOD, 122)
     c.ell(250, 965, 80, 70, fill=SKIN, w=8)
-    c.line([(290, 920), (px - 60, py)], OL, 58, True)
-    c.line([(290, 920), (px - 60, py)], SKIN, 42, True)
-    c.ell(px - 60, py, 21, fill="#f7d6b8", w=0)
-    for a in (-30, 0, 30):
-        rad = math.radians(a)
-        c.line([(px - 32 + 0 * math.cos(rad), py - 70 + 50 * math.sin(rad) - 30),
-                (px - 32 + 0 * math.cos(rad), py - 110 + 50 * math.sin(rad) - 30)], YEL, 8, True) if a == 0 else None
-    c.line([(px - 95, py - 70), (px - 115, py - 105)], YEL, 9, True)
-    c.line([(px - 30, py - 70), (px - 10, py - 105)], YEL, 9, True)
-    c.line([(px - 62, py - 75), (px - 62, py - 115)], YEL, 9, True)
+    c.line([(290, 920), (tip, py)], OL, 58, True)
+    c.line([(290, 920), (tip, py)], SKIN, 42, True)
+    c.ell(tip, py, 21, fill="#f7d6b8", w=0)
+    if pressed:
+        for a in range(200, 340, 35):
+            rad = math.radians(a)
+            c.line([(px + 70 * math.cos(rad), py + 70 * math.sin(rad)),
+                    (px + 125 * math.cos(rad), py + 125 * math.sin(rad))], YEL, 11, True)
+    else:
+        c.line([(px - 95, py - 70), (px - 115, py - 105)], YEL, 9, True)
+        c.line([(px - 30, py - 70), (px - 10, py - 105)], YEL, 9, True)
+        c.line([(px - 62, py - 75), (px - 62, py - 115)], YEL, 9, True)
 
 
 def s33(c, on):
@@ -986,65 +1009,239 @@ def s33(c, on):
     c.line([(540, 0), (540, H)], YEL, 10)
 
 
-def s34_factory(count):
+def s34_factory(count, clock="23:13"):
     def s34(c, on):
         if on:
             c.glow(540, 600, 400, RED, 110)
-        c.text(540, 600, "23:13", font(MONO, 230), RED if on else "#7a2326", stroke=8)
+        c.text(540, 600, clock, font(MONO, 230), RED if on else "#7a2326", stroke=8)
         c.ell(540, 990, 170, fill="#141a2d", ol=YEL, w=14)
         c.text(540, 990, str(count), font(ANTON, 240), YEL, stroke=6)
     return s34
 
 
-def s35(c, on):
+def s35(c, on, title="TEIL 2 FOLGT…"):
     c.glow(540, 900, 480, TUR, 60)
     c.rect(100, 720, 980, 1120, fill="#0f1a2a", ol=OL, r=36, w=22)
     c.rect(100, 720, 980, 1120, ol=TUR, r=36, w=10)
-    c.text(540, 870, "TEIL 2 FOLGT…", font(ANTON, 128), TUR, stroke=5)
+    c.text(540, 870, title, font(ANTON, 128), TUR, stroke=5)
     c.text(540, 1030, "Schreib A oder B", font(SANS, 50), "white", stroke=3)
 
 
-# ---------------------------------------------------------------- Skript
-# Nr, Dauer, Zeichenfunktion, Text, Effekt
-SCENES = [
-    (1, 1.5, s1, "**BLACKOUT** HAMBURG", ""),
-    (2, 1.0, lambda c, on: desk_scene(c, True), "21:47 UHR", ""),
-    (3, 1.0, lambda c, on: desk_scene(c, False), "**ZACK.**", "SHAKE"),
-    (4, 1.0, s4, "NICHTS.", ""),
-    (5, 1.0, lambda c, on: window_view(c), "DIE **STRASSE**…", ""),
-    (6, 1.5, s6, "GANZ **HAMBURG**.", ""),
-    (7, 1.0, s7, "KEIN **NETZ**.", ""),
-    (8, 1.0, s8, "**23 %**", ""),
-    (9, 1.0, s9, "KÜHLSCHRANK **AUS**.", ""),
-    (10, 1.0, s10, "**TROPFEN.**", ""),
-    (11, 1.0, s11, "RUHIG **BLEIBEN**.", ""),
-    (12, 1.0, s12, "DIE **REGEL**:", ""),
-    (13, 1.5, s13, "**RADIO** AN.", ""),
-    (14, 1.0, s14, "ECHTE **REGEL**!", ""),
-    (15, 1.0, s15, "BLEIBT **ZUHAUSE**.", ""),
-    (16, 1.0, s16, "**23:12**", ""),
-    (17, 1.0, s17, "**KLOPF.**", "SHAKE"),
-    (18, 1.0, s18, "WER… **DA**?", ""),
-    (19, 1.0, s19, "**NIEMAND.**", ""),
-    (20, 1.0, s20, "OPAS **KISTE**.", "BLINK"),
-    (21, 1.0, s21, "DAS **FUNKGERÄT**.", "BLINK"),
-    (22, 1.0, s22, "ES IST **AN**.", "BLINK"),
-    (23, 1.5, s23, "**KEINE** BATTERIEN.", ""),
-    (24, 1.0, s24, "HÖRT MICH **JEMAND**?", "SHAKE"),
-    (25, 1.0, s25, "**WAS?!**", "SHAKE"),
-    (26, 1.5, s26, "NICHT ZUM **ELBTUNNEL**!", "BLINK"),
-    (27, 1.0, s27, "ALLE **GEHEN**…", ""),
-    (28, 1.0, s28, "…ZUM **TUNNEL**.", ""),
-    (29, 1.5, s29, "SIE **WISSEN** ES.", "BLINK"),
-    (30, 1.0, s30, "**WOHER?!**", "SHAKE"),
-    (31, 1.0, s31, "**4 %**", "BLINK"),
-    (32, 1.0, s32, "**ANTWORTEN**?", ""),
-    (33, 2.0, s33, "A ODER **B**?", ""),
-    (34, 1.5, None, "**DU** ENTSCHEIDEST.", "BLINK"),
-    (35, 2.5, s35, None, ""),
+# ---------------------------------------------------------------- Teil 2: neue Bilder
+def t2_chose_a(c, on):
+    s33(c, on)
+    c.apoly([(545, 0), (W, 0), (W, H), (545, H)], "#000000", 175)
+    c.ell(410, 330, 62, fill=TUR, w=8)
+    c.line([(378, 332), (402, 358), (445, 302)], "white", 15, True)
+
+
+def t2_talk(c, on):
+    room(c)
+    j = draw_jonas(c, 540, 1250, 1.12, "radio", "focus", look=(8, 2))
+    px, py = j["R"]
+    draw_funk(c, px + 8, py - 70, 0.55, led=on, glow=False)
+    c.ell(px, py, 27 * 1.12, fill=SKIN)
+    hx, hy, r = j["head"]
+    for rr in (40, 70):
+        c.arc(hx + 60, hy + 66, rr, -40, 40, YEL, 9)
+    c.dark(150, [(600, 660, 400, 20)])
+    if on:
+        c.glow(px + 30, py - 138, 130, RED, 150)
+
+
+def t2_endlich(c, on):
+    c.glow(540, 860, 560, TUR, 80)
+    draw_funk(c, 540, 870, 1.45, led=on)
+    for r in (300, 380, 460):
+        c.arc(540, 820, r, 150, 210, TUR, 14)
+        c.arc(540, 820, r, -30, 30, TUR, 14)
+
+
+def t2_water(c, on, check=False):
+    c.glow(540, 860, 480, TUR, 55)
+    for i in range(5):
+        x = 200 + i * 170
+        c.rect(x - 22, 650, x + 22, 690, fill=RED, r=8, w=6)
+        c.rect(x - 34, 680, x + 34, 720, fill="#2b7891", r=10, w=6)
+        c.rect(x - 62, 715, x + 62, 1080, fill="#1f5f73", r=34, w=8)
+        c.rect(x - 52, 790, x + 52, 1070, fill="#3fa7c0", r=26, w=0)
+        c.rect(x - 62, 880, x + 62, 950, fill="#e9eefc", w=6)
+        c.text(x, 916, "2 L", font(ANTON, 50), "#1f5f73")
+        c.line([(x - 35, 760), (x - 35, 860)], "#bff7ff", 8, True)
+    c.text(540, 500, "2 L × 10 TAGE", font(ANTON, 120), YEL, stroke=7)
+    c.text(540, 1160, "pro Person · Empfehlung BBK", font(SANS, 36), "#c9d1e8", stroke=3)
+    if check:
+        c.ell(900, 330, 75, fill=TUR, w=9)
+        c.line([(860, 333), (890, 365), (945, 295)], "white", 18, True)
+
+
+def draw_opa(c, x, y, r):
+    k = r / 125
+    for sx in (-1, 1):
+        c.ell(x + sx * (r - 6 * k), y + 12 * k, 26 * k, fill=SKIN)
+    c.ell(x, y, r, fill=SKIN)
+    for sx in (-1, 1):
+        c.ell(x + sx * 95 * k, y - 35 * k, 40 * k, 55 * k, fill="#d5d8e0", w=6 * k)
+        c.line([(x + sx * 70 * k, y - 30 * k), (x + sx * 20 * k, y - 38 * k)], "#d5d8e0", 14 * k, True)
+        c.ell(x + sx * 45 * k, y + 5 * k, 30 * k, ol=OL, w=6 * k)
+        c.ell(x + sx * 45 * k, y + 5 * k, 9 * k, fill=OL, w=0)
+    c.line([(x - 15 * k, y + 5 * k), (x + 15 * k, y + 5 * k)], OL, 6 * k)
+    c.poly([(x - 55 * k, y + 60 * k), (x, y + 42 * k), (x + 55 * k, y + 60 * k), (x, y + 75 * k)], fill="#d5d8e0", w=5 * k)
+    c.arc(x, y + 70 * k, 22 * k, 30, 150, OL, 5 * k)
+    for i in range(3):
+        c.line([(x - 70 * k + i * 10 * k, y - 85 * k - i * 6 * k), (x + 60 * k - i * 10 * k, y - 85 * k - i * 6 * k)], "#e8c4a4", 4 * k)
+
+
+def t2_photo(c, on):
+    room(c, window=False)
+    c.rect(120, 1000, 1000, 1040, fill="#4b3a2e")
+    c.rect(140, 1040, 980, 1160, fill="#3a2d24", w=6)
+    c.rect(290, 420, 790, 1000, fill="#6b4a2e", w=10)
+    c.rect(330, 460, 750, 960, fill="#d9cfb8", w=5)
+    c.rect(365, 495, 715, 925, fill="#5d6b7a", w=5)
+    c.rect(415, 800, 665, 925, fill="#6b5240", r=60, w=7)
+    c.poly([(510, 800), (540, 860), (570, 800)], fill="#e9eefc", w=5)
+    draw_opa(c, 540, 690, 115)
+    c.poly([(650, 420), (790, 420), (790, 560)], fill="#05060a", ol=OL, w=6)
+    c.poly([(700, 420), (790, 420), (790, 510)], fill="#1b1c21", w=0)
+    fx, fy = draw_candle(c, 900, 1000, 0.9)
+    c.dark(200, [(640, 720, 460, 30), (fx, fy, 300, 0)])
+    c.glow(fx, fy, 360, "#ffa340", 80)
+
+
+def t2_candle_out(c, on):
+    room(c)
+    c.rect(620, 1000, 980, 1030, fill="#4b3a2e")
+    c.rect(650, 1030, 675, 1170, fill="#3a2d24", w=6)
+    c.rect(925, 1030, 950, 1170, fill="#3a2d24", w=6)
+    draw_jonas(c, 400, 1250, 1.05, "stand", "scared", look=(8, 2))
+    c.rect(758, 890, 802, 1000, fill="#f3e3c3", r=6, w=6)
+    c.line([(780, 890), (780, 872)], OL, 5)
+    smoke = [(780 + 18 * math.sin(i * 0.9), 865 - i * 32) for i in range(10)]
+    c.line(smoke, "#8a8d99", 9)
+    c.dark(222, [(780, 760, 260, 110), (400, 650, 260, 150)])
+
+
+def t2_eyes(c, on):
+    c.rect(0, 0, W, H, fill="#020306", w=0)
+    for x in (430, 650):
+        c.ell(x, 800, 52, fill="#e9eefc", w=6)
+        c.ell(x + 18, 805, 16, fill=OL, w=0)
+    c.poly([(760, 690), (782, 735), (760, 752), (738, 735)], fill=TUR, w=5)
+
+
+def t2_doorgap(c, on):
+    c.rect(0, 0, W, 1150, fill="#2e2018", w=0)
+    for x in (140, 540, 940):
+        c.rect(x - 160, 120, x + 160, 1080, fill="#281b14", ol="#1a110c", w=8, r=10)
+    c.rect(0, 1150, W, H, fill="#0d0f18", w=0)
+    c.apoly([(0, 1172), (W, 1172), (W + 300, 1600), (-300, 1600)], YEL, 70, blur=50)
+    for x0 in (360, 600):
+        c.apoly([(x0, 1172), (x0 + 110, 1172), (x0 + 170, 1600), (x0 - 60, 1600)], "#000000", 200, blur=20)
+    c.glow(540, 1162, 380, YEL, 150)
+    c.rect(0, 1150, W, 1174, fill="#fff1b8", w=0)
+    for x0 in (360, 600):
+        c.rect(x0, 1150, x0 + 110, 1174, fill="#05060a", w=0)
+    c.line([(0, 1148), (W, 1148)], OL, 8)
+    c.ell(820, 620, 22, fill="#c9b27a", w=6)
+    c.dark(60)
+
+
+def t2_choice(c, on):
+    c.rect(0, 0, 540, H, fill="#0f2a33", w=0)
+    c.rect(540, 0, W, H, fill="#33121a", w=0)
+    c.rect(300, 690, 520, 1240, fill="#5a3d2b", w=8)
+    c.rect(330, 730, 490, 960, fill="#4d3424", w=5, r=6)
+    c.rect(318, 980, 360, 1000, fill="#c9b27a", r=8, w=5)
+    draw_jonas(c, 185, 1250, 0.62, "tap", "scared", look=(8, 0))
+    c.rect(640, 600, 1030, 1010, fill="#0d1222", w=10)
+    c.ell(930, 700, 32, fill="#c9d1e8", w=5)
+    random.seed(9)
+    for _ in range(12):
+        c.ell(random.uniform(660, 1010), random.uniform(620, 990), 2.5, fill="#9aa6c8", w=0)
+    c.line([(835, 600), (835, 1010)], OL, 10)
+    c.line([(640, 805), (1030, 805)], OL, 10)
+    draw_jonas(c, 780, 1250, 0.62, "reach", "focus", look=(8, -6))
+    for cx, lab, sub, col in ((270, "A", "TÜR AUF", TUR), (810, "B", "FENSTER", RED)):
+        c.text(cx, 400, lab, font(ANTON, 260), col, stroke=8)
+        c.text(cx, 560, sub, font(SANS, 38), "white", stroke=3)
+    c.line([(540, 0), (540, H)], OL, 20)
+    c.line([(540, 0), (540, H)], YEL, 10)
+
+
+# ---------------------------------------------------------------- Skripte
+# Nr, Dauer, Zeichenfunktion (None = Countdown), Text, Effekt, Bewegungs-Prompt für Bild-zu-Video-KI
+# "*" am Anfang des Prompts = lohnt sich besonders für KI-Bewegung.
+SCENES1 = [
+    (1, 1.5, s1, "**BLACKOUT** HAMBURG", "", "*The boy slowly raises his eyes from the phone, frightened, phone light flickers softly on his face"),
+    (2, 1.0, lambda c, on: desk_scene(c, True), "21:47 UHR", "", "*The boy presses buttons on the gamepad, game on the monitor moves, screen glow pulses"),
+    (3, 1.0, lambda c, on: desk_scene(c, False), "**ZACK.**", "SHAKE", "Camera shakes once, the boy flinches"),
+    (4, 1.0, s4, "NICHTS.", "", "*The boy flips the light switch twice, nothing happens, he tilts his head"),
+    (5, 1.0, lambda c, on: window_view(c), "DIE **STRASSE**…", "", "Slow push-in through the window, curtains sway slightly, stars twinkle"),
+    (6, 1.5, s6, "GANZ **HAMBURG**.", "", "*Slow pan across the dark skyline, water ripples gently, moon glows"),
+    (7, 1.0, s7, "KEIN **NETZ**.", "", "Phone screen flickers, red X pulses"),
+    (8, 1.0, s8, "**23 %**", "", "Battery icon pulses softly"),
+    (9, 1.0, s9, "KÜHLSCHRANK **AUS**.", "", "Fridge door swings open a little more, the boy leans forward"),
+    (10, 1.0, s10, "**TROPFEN.**", "", "*Single water drops fall from the tap, the boy turns the handle"),
+    (11, 1.0, s11, "RUHIG **BLEIBEN**.", "", "*Candle flame flickers and lights up, warm light spreads, the boy breathes out"),
+    (12, 1.0, s12, "DIE **REGEL**:", "", "Thought bubble pops up and wobbles, the boy looks up"),
+    (13, 1.5, s13, "**RADIO** AN.", "", "*The hand cranks the radio handle in circles"),
+    (14, 1.0, s14, "ECHTE **REGEL**!", "", "Turquoise sound waves pulse outward from the radio"),
+    (15, 1.0, s15, "BLEIBT **ZUHAUSE**.", "", "Speaker glows and vibrates with turquoise light"),
+    (16, 1.0, s16, "**23:12**", "", "*Candle flickers, the boy pulls the blanket tighter"),
+    (17, 1.0, s17, "**KLOPF.**", "SHAKE", "*The door shakes slightly from knocking"),
+    (18, 1.0, s18, "WER… **DA**?", "", "*The boy freezes and trembles, eyes widen"),
+    (19, 1.0, s19, "**NIEMAND.**", "", "Fisheye view drifts slowly down the empty dark hallway"),
+    (20, 1.0, s20, "OPAS **KISTE**.", "BLINK", "*Red light pulses through the gap of the cardboard box"),
+    (21, 1.0, s21, "DAS **FUNKGERÄT**.", "BLINK", "Red LED on the walkie-talkie blinks, slow push-in"),
+    (22, 1.0, s22, "ES IST **AN**.", "BLINK", "*The boy lifts the walkie-talkie closer, red LED blinks"),
+    (23, 1.5, s23, "**KEINE** BATTERIEN.", "", "Slow push-in into the empty battery compartment"),
+    (24, 1.0, s24, "HÖRT MICH **JEMAND**?", "SHAKE", "*Walkie-talkie vibrates, zigzag sound waves pulse"),
+    (25, 1.0, s25, "**WAS?!**", "SHAKE", "*The face reacts in shock, sweat drops fly, rays pulse"),
+    (26, 1.5, s26, "NICHT ZUM **ELBTUNNEL**!", "BLINK", "Red X on the map pulses, river shimmers"),
+    (27, 1.0, s27, "ALLE **GEHEN**…", "", "*Tiny people with flashlights walk to the right through the street"),
+    (28, 1.0, s28, "…ZUM **TUNNEL**.", "", "*Crowd walks away from camera toward the river, flashlight beams sway"),
+    (29, 1.5, s29, "SIE **WISSEN** ES.", "BLINKFAST", "Red LED blinks fast, red light pulses"),
+    (30, 1.0, s30, "**WOHER?!**", "SHAKE", "*The boy presses himself against the wall and slides back"),
+    (31, 1.0, s31, "**4 %**", "BLINK", "Battery outline blinks red"),
+    (32, 1.0, s32, "**ANTWORTEN**?", "", "*Finger hovers and trembles above the side button"),
+    (33, 2.0, s33, "A ODER **B**?", "", "Both sides: subtle movement, letters A and B pulse"),
+    (34, 1.5, None, "**DU** ENTSCHEIDEST.", "BLINK", "Red clock pulses (use original, countdown is rendered)"),
+    (35, 2.5, lambda c, on: s35(c, on, "TEIL 2 FOLGT…"), None, "", "Box glows softly (use original)"),
 ]
 
-VOICE = {
+SCENES2 = [
+    (1, 1.5, s29, "**TEIL 2**", "BLINK", "Red LED blinks, red light pulses"),
+    (2, 1.0, t2_chose_a, "**A**: DU ANTWORTEST.", "", "Left side glows, checkmark pops"),
+    (3, 1.0, lambda c, on: s32(c, on, pressed=True), "**KLICK.**", "SHAKE", "*Finger presses the side button firmly"),
+    (4, 1.5, t2_talk, "HALLO? **WER** DA?", "", "*The boy speaks into the walkie-talkie, mouth moves, sound arcs pulse"),
+    (5, 1.0, lambda c, on: funk_waves(c, True, ("#8a8d99", "#5a6070", "#8a8d99")), "**RAUSCHEN…**", "", "Grey static waves flicker around the device"),
+    (6, 1.0, t2_endlich, "**ENDLICH.**", "", "*Turquoise sound waves pulse out of the walkie-talkie"),
+    (7, 1.0, s22, "DU **HÖRST** MICH?!", "", "*The boy pulls the walkie-talkie closer, surprised"),
+    (8, 1.5, s26, "DER TUNNEL IST EINE **FALLE**.", "BLINK", "Red X pulses, river shimmers"),
+    (9, 1.0, s27, "ABER **ALLE** GEHEN HIN…", "", "*Tiny people with flashlights walk to the right"),
+    (10, 1.0, lambda c, on: funk_waves(c, on, (RED, YEL, RED)), "BLEIB **DRIN**.", "BLINK", "Walkie-talkie vibrates, waves pulse"),
+    (11, 1.5, t2_water, "**2 LITER** PRO TAG.", "", "Water in the bottles sloshes gently"),
+    (12, 1.0, lambda c, on: t2_water(c, on, check=True), "ECHTE **REGEL**!", "", "Checkmark pops in"),
+    (13, 1.0, lambda c, on: s31(c, on, 2), "**2 %**", "BLINK", "Battery outline blinks red"),
+    (14, 1.0, lambda c, on: s12(c, on, "?"), "WER **BIST** DU?", "", "Thought bubble wobbles, the boy looks up"),
+    (15, 1.5, s29, "ICH BIN'S. **OPA.**", "BLINK", "*Red LED blinks slowly, light breathes, slow push-in"),
+    (16, 1.0, s25, "**OPA?!**", "SHAKE", "*The face reacts in shock, sweat drops fly"),
+    (17, 1.5, t2_photo, "OPA IST SEIT **3 JAHREN** TOT.", "", "*Candle flickers, slow push-in to the old photo"),
+    (18, 1.0, s17, "**KLOPF. KLOPF.**", "SHAKE", "*The door shakes from knocking"),
+    (19, 1.0, lambda c, on: s17(c, on, handle=True), "DIE **KLINKE**…", "SHAKE", "*The door handle slowly moves down"),
+    (20, 1.0, lambda c, on: funk_waves(c, on, (RED, RED, RED)), "NICHT **AUFMACHEN**!", "BLINK", "Walkie-talkie vibrates hard"),
+    (21, 1.0, lambda c, on: s31(c, on, 1), "**1 %**", "BLINK", "Battery outline blinks red"),
+    (22, 1.0, t2_candle_out, "KERZE **AUS**.", "", "*Thin smoke rises from the candle wick"),
+    (23, 1.0, t2_eyes, "**STILLE.**", "", "*Eyes in the dark blink and look sideways"),
+    (24, 1.0, t2_doorgap, "LICHT UNTER DER **TÜR**.", "", "*Light under the door moves, shadows of two feet shift"),
+    (25, 1.5, t2_endlich, "DAS **FENSTER**. JETZT.", "BLINK", "Turquoise waves pulse"),
+    (26, 2.0, t2_choice, "A ODER **B**?", "", "Both sides: subtle movement, letters pulse"),
+    (27, 1.5, None, "**DU** ENTSCHEIDEST.", "BLINK", "Red clock pulses (use original)"),
+    (28, 2.5, lambda c, on: s35(c, on, "TEIL 3 FOLGT…"), None, "", "Box glows softly (use original)"),
+]
+
+VOICE1 = {
     1: "Blackout in Hamburg. Was würdest du tun?", 2: "Du zockst gerade.", 3: "Zack.", 4: "Licht? Nichts.",
     5: "Die ganze Straße…", 6: "…ganz Hamburg ist dunkel.", 7: "Dein Handy: kein Netz.", 8: "Noch 23 Prozent.",
     9: "Der Kühlschrank ist aus.", 10: "Das Wasser wird weniger.", 11: "Okay. Ruhig bleiben.",
@@ -1058,13 +1255,42 @@ VOICE = {
     34: "Du entscheidest.", 35: "Schreib A oder B in die Kommentare.",
 }
 
-DESCRIPTION = ("Ganz Hamburg ist dunkel – und Opas Funkgerät funkt ohne Batterien 😨 Antwortest du? "
-               "Schreib A oder B! Die Regel stimmt wirklich (Quelle: BBK-Ratgeber Notfallvorsorge).\n"
-               "#blackout #hamburg #duentscheidest #survival #wasmachstdu\n")
+VOICE2 = {
+    1: "Teil 2.", 2: "Du drückst die Taste.", 3: "Klick.", 4: "Hallo? Wer ist da?",
+    6: "(Funkstimme) Endlich.", 7: "Du hörst mich?!", 8: "(Funkstimme) Der Tunnel ist eine Falle.",
+    9: "Aber alle gehen hin…", 10: "(Funkstimme) Bleib drin.",
+    11: "(Funkstimme) Hast du Wasser? Zwei Liter pro Person und Tag.",
+    12: "Das ist wirklich die offizielle Empfehlung – Vorrat für zehn Tage.", 13: "Noch 2 Prozent.",
+    14: "Wer bist du?", 15: "(Funkstimme, leise) Ich bin's. Opa.", 16: "Opa?!",
+    17: "Opa ist seit drei Jahren tot.", 19: "Die Klinke bewegt sich…", 20: "(Funkstimme) Nicht aufmachen!",
+    21: "Ein Prozent.", 22: "Die Kerze geht aus.", 24: "Da steht jemand vor der Tür.",
+    25: "(Funkstimme) Das Fenster. Jetzt.", 26: "A: Du machst die Tür auf. B: Du kletterst aus dem Fenster.",
+    27: "Du entscheidest.", 28: "Schreib A oder B in die Kommentare.",
+}
+
+PARTS = {
+    1: dict(scenes=SCENES1, voice=VOICE1, clocks=((15, "21:47"), (30, "23:12"), (99, "23:13")),
+            audio=dict(hit=(1, 3, 25, 35), heart=(8, 18, 30), beep=(7, 31, 32), knock=(17,), noise=((14, 15), (21, 29))),
+            cover=(s1, "TEIL 1 · DU ENTSCHEIDEST"),
+            desc="Ganz Hamburg ist dunkel – und Opas Funkgerät funkt ohne Batterien 😨 Antwortest du? "
+                 "Schreib A oder B! Die Regel stimmt wirklich (Quelle: BBK-Ratgeber Notfallvorsorge).\n"
+                 "#blackout #hamburg #duentscheidest #survival #wasmachstdu\n"),
+    2: dict(scenes=SCENES2, voice=VOICE2, clocks=((12, "23:13"), (21, "23:14"), (99, "23:15")),
+            audio=dict(hit=(1, 16, 28), heart=(15, 23), beep=(3, 13, 21), knock=(18,), noise=((5, 10), (15, 15), (20, 20), (25, 25))),
+            cover=(t2_talk, "TEIL 2 · DU ENTSCHEIDEST"),
+            desc="Opas Funkgerät antwortet – aber Opa ist seit 3 Jahren tot 😨 Tür oder Fenster? Schreib A oder B! "
+                 "Die Wasser-Regel stimmt wirklich: 2 Liter pro Person und Tag, Vorrat für 10 Tage "
+                 "(Quelle: BBK-Ratgeber Notfallvorsorge).\n"
+                 "#blackout #hamburg #duentscheidest #survival #wasmachstdu #teil2\n"),
+}
+
+PART = PARTS[1]
 
 
 def clock_for(n):
-    return "21:47" if n <= 15 else ("23:12" if n <= 30 else "23:13")
+    for last, clk in PART["clocks"]:
+        if n <= last:
+            return clk
 
 
 def render_frame(n, fn, txt, on, with_hud=True):
@@ -1078,24 +1304,39 @@ def render_frame(n, fn, txt, on, with_hud=True):
     return c
 
 
-def variants_for(n, fn, txt, fx, dur):
+def overlay_frame(n, txt, on):
+    """Nur Vignette + HUD + Text auf transparentem Grund (für KI-Clips)."""
+    c = Cv(transparent=True)
+    vignette(c)
+    hud(c, clock_for(n), on)
+    if txt:
+        caption(c, txt)
+    return c.img.resize((W, H), Image.LANCZOS)
+
+
+def blink_expr(fx, on):
+    period = 0.2 if fx == "BLINKFAST" else (0.4 if fx.startswith("BLINK") else 0.8)
+    off = period / 2 if fx.startswith("BLINK") else 0.5
+    return f"lt(mod(t,{period}),{off})" if on else f"gte(mod(t,{period}),{off})"
+
+
+def variants_for(n, fn, txt, fx, dur, build):
     """Liste von (Bild, enable-Ausdruck). Erstes Bild = Basis."""
     out = []
-    if n == 34:
+    if fn is None:
         seg = dur / 3
+        clock = clock_for(n)
         for k, cnt in enumerate((3, 2, 1)):
-            f = s34_factory(cnt)
+            f = s34_factory(cnt, clock)
             for on in (True, False):
-                p = os.path.join(BUILD, f"s{n:02d}_{cnt}{'a' if on else 'b'}.png")
+                p = os.path.join(build, f"s{n:02d}_{cnt}{'a' if on else 'b'}.png")
                 render_frame(n, f, txt, on).img.convert("RGB").save(p, compress_level=1)
-                blink = "lt(mod(t,0.4),0.2)" if on else "gte(mod(t,0.4),0.2)"
-                out.append((p, f"gte(t,{k * seg:.3f})*lt(t,{(k + 1) * seg:.3f})*{blink}"))
+                out.append((p, f"gte(t,{k * seg:.3f})*lt(t,{(k + 1) * seg:.3f})*{blink_expr(fx, on)}"))
         return out
-    period = 0.2 if n == 29 else (0.4 if fx == "BLINK" else 0.8)
     for on in (True, False):
-        p = os.path.join(BUILD, f"s{n:02d}{'a' if on else 'b'}.png")
+        p = os.path.join(build, f"s{n:02d}{'a' if on else 'b'}.png")
         render_frame(n, fn, txt, on).img.convert("RGB").save(p, compress_level=1)
-        out.append((p, f"gte(mod(t,{period}),{period / 2 if fx == 'BLINK' else 0.5})"))
+        out.append((p, blink_expr(fx, on)))
     return out
 
 
@@ -1107,9 +1348,11 @@ def run(cmd):
         sys.exit(1)
 
 
-def render_segment(n, variants, dur, shake):
+ENC = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS)]
+
+
+def render_segment(n, variants, dur, shake, out):
     frames = round(dur * FPS)
-    out = os.path.join(BUILD, f"seg{n:02d}.mp4")
     cmd = ["ffmpeg", "-y", "-v", "error"]
     for p, _ in variants:
         cmd += ["-loop", "1", "-framerate", str(FPS), "-t", str(dur), "-i", p]
@@ -1123,15 +1366,34 @@ def render_segment(n, variants, dur, shake):
     sy = "+if(lt(in,16),45*cos(in*1.7)*(1-in/16),0)" if shake else ""
     fc.append(f"{last}zoompan=z='{z}':x='iw/2-iw/zoom/2{sx}':y='ih/2-ih/zoom/2{sy}':d=1:s={W}x{H}:fps={FPS},"
               f"format=yuv420p[v]")
-    cmd += ["-filter_complex", ";".join(fc), "-map", "[v]", "-frames:v", str(frames), "-c:v", "libx264",
-            "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(FPS), out]
+    cmd += ["-filter_complex", ";".join(fc), "-map", "[v]", "-frames:v", str(frames)] + ENC + [out]
     run(cmd)
-    return out
+
+
+def render_ki_segment(n, clip, txt, fx, dur, build, out):
+    """KI-Clip als Bild, darüber HUD + Text (blinkender Alarmpunkt)."""
+    frames = round(dur * FPS)
+    ovs = []
+    for on in (True, False):
+        p = os.path.join(build, f"ov{n:02d}{'a' if on else 'b'}.png")
+        overlay_frame(n, txt, on).save(p, compress_level=1)
+        ovs.append(p)
+    cmd = ["ffmpeg", "-y", "-v", "error", "-i", clip]
+    for p in ovs:
+        cmd += ["-loop", "1", "-framerate", str(FPS), "-t", str(dur), "-i", p]
+    fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},setsar=1,"
+          f"tpad=stop_mode=clone:stop_duration={dur},trim=duration={dur},setpts=PTS-STARTPTS[b];"
+          f"[b][1:v]overlay=enable='{blink_expr(fx, True)}'[o1];"
+          f"[o1][2:v]overlay=enable='{blink_expr(fx, False)}',format=yuv420p[v]")
+    cmd += ["-filter_complex", fc, "-map", "[v]", "-an", "-frames:v", str(frames)] + ENC + [out]
+    run(cmd)
 
 
 # ---------------------------------------------------------------- Sound
-def build_audio(starts, total):
+def build_audio(starts, total, build):
     srcs, events = [], []
+    dur_of = {s[0]: s[1] for s in PART["scenes"]}
+    ev = PART["audio"]
 
     def add(src, t, post=""):
         srcs.append(src)
@@ -1146,31 +1408,36 @@ def build_audio(starts, total):
     beep = "aevalsrc='0.09*sin(2*PI*1150*t)':s=44100:d=0.16"
     knock = ("aevalsrc='0.4*sin(2*PI*95*t)*(exp(-45*t)+if(gte(t,0.2),exp(-45*(t-0.2)),0)"
              "+if(gte(t,0.4),exp(-45*(t-0.4)),0))':s=44100:d=0.9")
-    for n in (1, 3, 25, 35):
+    for n in ev["hit"]:
         add(hit, starts[n])
-    for n in (8, 18, 30):
+    for n in ev["heart"]:
         add(heart, starts[n])
-    for n in (7, 31, 32):
+    for n in ev["beep"]:
         add(beep, starts[n] + 0.05, "afade=t=out:st=0.12:d=0.04,")
-    add(knock, starts[17], "lowpass=f=600,")
-    for a, b in ((14, 15), (21, 29)):
-        t0, t1 = starts[a], starts[b] + dict((s[0], s[1]) for s in SCENES)[b]
-        d = t1 - t0
+    for n in ev["knock"]:
+        add(knock, starts[n], "lowpass=f=600,")
+    for a, b in ev["noise"]:
+        t0 = starts[a]
+        d = starts[b] + dur_of[b] - t0
         add(f"anoisesrc=d={d:.2f}:c=pink:a=0.12:r=44100", t0,
             f"highpass=f=500,lowpass=f=3500,afade=t=in:d=0.2,afade=t=out:st={d - 0.25:.2f}:d=0.25,")
     cmd = ["ffmpeg", "-y", "-v", "error"]
     for s in srcs:
         cmd += ["-f", "lavfi", "-i", s]
-    fc = []
-    for i, (t, post) in enumerate(events):
-        fc.append(f"[{i}:a]{post}adelay={int(t * 1000)}:all=1[a{i}]")
+    fc = [f"[{i}:a]{post}adelay={int(t * 1000)}:all=1[a{i}]" for i, (t, post) in enumerate(events)]
     fc.append("".join(f"[a{i}]" for i in range(len(events))) +
               f"amix=inputs={len(events)}:normalize=0:duration=longest,"
               f"alimiter=limit=0.5:level=false,atrim=end={total},aformat=sample_rates=44100:channel_layouts=stereo[a]")
-    wav = os.path.join(BUILD, "audio.wav")
+    wav = os.path.join(build, "audio.wav")
     cmd += ["-filter_complex", ";".join(fc), "-map", "[a]", wav]
     run(cmd)
-    return wav
+    fx_list = [(starts[n], f"Hit (tiefer Schlag) – Szene {n}") for n in ev["hit"]]
+    fx_list += [(starts[n], f"Herzschlag (Doppel-Puls) – Szene {n}") for n in ev["heart"]]
+    fx_list += [(starts[n] + 0.05, f"Piep (Handy/Funk) – Szene {n}") for n in ev["beep"]]
+    fx_list += [(starts[n], f"Klopfen an der Tür (3x) – Szene {n}") for n in ev["knock"]]
+    fx_list += [(starts[a], f"Funk-/Radio-Rauschen bis {ts(starts[b] + dur_of[b])} – Szene {a}–{b}") for a, b in ev["noise"]]
+    fx_list += [(0.0, f"Grundspur: tiefer Drone, leise, durchgehend bis {ts(total)}")]
+    return wav, sorted(fx_list)
 
 
 def ts(t):
@@ -1179,79 +1446,98 @@ def ts(t):
 
 # ---------------------------------------------------------------- main
 def main():
-    os.makedirs(OUT, exist_ok=True)
-    os.makedirs(BUILD, exist_ok=True)
-    only = {int(a) for a in sys.argv[1:]}
+    global PART
+    args = sys.argv[1:]
+    teil = 1
+    if "--teil" in args:
+        i = args.index("--teil")
+        teil = int(args[i + 1])
+        del args[i:i + 2]
+    PART = PARTS[teil]
+    scenes = PART["scenes"]
+    only = {int(a) for a in args}
+    build = os.path.join(BUILD, f"teil{teil}")
+    clean_dir = os.path.join(OUT, f"teil{teil}_bilder_fuer_ki")
+    ki_dir = os.path.join(ROOT, "ki_clips", f"teil{teil}")
+    for d in (OUT, build, clean_dir, ki_dir):
+        os.makedirs(d, exist_ok=True)
     starts, t = {}, 0.0
-    for n, dur, *_ in SCENES:
+    for n, dur, *_ in scenes:
         starts[n] = t
         t += dur
     total = t
 
-    for n, dur, fn, txt, fx in SCENES:
-        seg = os.path.join(BUILD, f"seg{n:02d}.mp4")
+    for n, dur, fn, txt, fx, motion in scenes:
+        seg = os.path.join(build, f"seg{n:02d}.mp4")
+        clip = os.path.join(ki_dir, f"szene_{n:02d}.mp4")
         if only and n not in only and os.path.exists(seg):
             continue
-        if not only and os.path.exists(seg) and "--force" not in sys.argv:
-            pass
-        print(f"Szene {n}", flush=True)
-        v = variants_for(n, fn, txt, fx, dur)
-        render_segment(n, v, dur, fx == "SHAKE")
+        print(f"Teil {teil} · Szene {n}" + (" (KI-Clip)" if os.path.exists(clip) else ""), flush=True)
+        clean_fn = fn or s34_factory(3, clock_for(n))
+        render_frame(n, clean_fn, None, True, with_hud=False).img.convert("RGB").resize((W, H), Image.LANCZOS) \
+            .save(os.path.join(clean_dir, f"szene_{n:02d}.png"))
+        if os.path.exists(clip):
+            render_ki_segment(n, clip, txt, fx, dur, build, seg)
+        else:
+            render_segment(n, variants_for(n, fn, txt, fx, dur, build), dur, fx == "SHAKE", seg)
 
-    lst = os.path.join(BUILD, "list.txt")
+    lst = os.path.join(build, "list.txt")
     with open(lst, "w") as f:
-        for n, *_ in SCENES:
+        for n, *_ in scenes:
             f.write(f"file 'seg{n:02d}.mp4'\n")
-    silent = os.path.join(OUT, "blackout_teil1_ohne_ton.mp4")
+    name = f"blackout_teil{teil}"
+    silent = os.path.join(OUT, f"{name}_ohne_ton.mp4")
     run(["ffmpeg", "-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy",
          "-movflags", "+faststart", silent])
-    wav = build_audio(starts, total)
+    wav, fx_list = build_audio(starts, total, build)
     run(["ffmpeg", "-y", "-v", "error", "-i", silent, "-i", wav, "-map", "0:v", "-map", "1:a", "-c:v", "copy",
-         "-c:a", "aac", "-b:a", "192k", "-t", f"{total}", "-movflags", "+faststart",
-         os.path.join(OUT, "blackout_teil1.mp4")])
+         "-c:a", "aac", "-b:a", "192k", "-t", f"{total}", "-movflags", "+faststart", os.path.join(OUT, f"{name}.mp4")])
 
-    # Cover
+    cover_fn, label = PART["cover"]
     c = Cv()
-    s1(c, True)
+    cover_fn(c, True)
     vignette(c)
-    c.rect(250, 1095, 830, 1175, fill=RED, r=40, w=6)
-    c.text(540, 1136, "TEIL 1 · DU ENTSCHEIDEST", font(SANS, 38), "white")
+    lw = font(SANS, 38).getlength(label) / S
+    c.rect(540 - lw / 2 - 40, 1095, 540 + lw / 2 + 40, 1175, fill=RED, r=40, w=6)
+    c.text(540, 1136, label, font(SANS, 38), "white")
     c.text(540, 1330, "BLACKOUT", font(ANTON, 250), YEL, stroke=9)
     c.text(540, 1550, "IN HAMBURG", font(ANTON, 160), "white", stroke=8)
-    c.img.convert("RGB").resize((W, H), Image.LANCZOS).save(os.path.join(OUT, "cover.png"))
+    c.img.convert("RGB").resize((W, H), Image.LANCZOS).save(os.path.join(OUT, f"cover_teil{teil}.png"))
 
-    # Kontaktblatt
-    thumbs = []
-    for n, *_ in SCENES:
-        p = os.path.join(BUILD, f"s{n:02d}a.png") if n != 34 else os.path.join(BUILD, "s34_3a.png")
-        thumbs.append((n, Image.open(p).resize((216, 384), Image.LANCZOS)))
-    sheet = Image.new("RGB", (216 * 7, 384 * 5), "black")
+    cols = 7
+    rows = math.ceil(len(scenes) / cols)
+    sheet = Image.new("RGB", (216 * cols, 384 * rows), "black")
     sd = ImageDraw.Draw(sheet)
-    for i, (n, im) in enumerate(thumbs):
-        x, y = (i % 7) * 216, (i // 7) * 384
-        sheet.paste(im, (x, y))
+    for i, (n, _, fn, *_) in enumerate(scenes):
+        p = os.path.join(build, f"s{n:02d}_3a.png" if fn is None else f"s{n:02d}a.png")
+        if not os.path.exists(p):
+            continue
+        x, y = (i % cols) * 216, (i // cols) * 384
+        sheet.paste(Image.open(p).resize((216, 384), Image.LANCZOS), (x, y))
         sd.text((x + 6, y + 350), str(n), fill="yellow", font=ImageFont.truetype(SANS, 24))
-    sheet.save(os.path.join(BUILD, "kontaktblatt.png"))
+    sheet.save(os.path.join(build, "kontaktblatt.png"))
 
-    with open(os.path.join(OUT, "sprecher.txt"), "w") as f:
-        f.write("SPRECHERTEXTE – Blackout Hamburg Teil 1 (Startzeit mm:ss.hh | Szene | Text)\n\n")
-        for n, txt in VOICE.items():
+    with open(os.path.join(OUT, f"sprecher_teil{teil}.txt"), "w") as f:
+        f.write(f"SPRECHERTEXTE – Blackout Hamburg Teil {teil} (Startzeit mm:ss.hh | Szene | Text)\n\n")
+        for n, txt in PART["voice"].items():
             f.write(f"{ts(starts[n])} | Szene {n:2d} | {txt}\n")
         f.write(f"\nGesamtlänge: {ts(total)}\n")
-    with open(os.path.join(OUT, "beschreibung.txt"), "w") as f:
-        f.write(DESCRIPTION)
-    dur_of = {s[0]: s[1] for s in SCENES}
-    fx_list = [(starts[n], f"Hit (tiefer Schlag) – Szene {n}") for n in (1, 3, 25, 35)]
-    fx_list += [(starts[n], f"Herzschlag (Doppel-Puls) – Szene {n}") for n in (8, 18, 30)]
-    fx_list += [(starts[n] + 0.05, f"Piep (Handy/Funk) – Szene {n}") for n in (7, 31, 32)]
-    fx_list += [(starts[17], "Klopfen an der Tür (3x) – Szene 17")]
-    fx_list += [(starts[14], f"Radio-Rauschen bis {ts(starts[15] + dur_of[15])} – Szene 14–15")]
-    fx_list += [(starts[21], f"Funk-Rauschen bis {ts(starts[29] + dur_of[29])} – Szene 21–29")]
-    fx_list += [(0.0, f"Grundspur: tiefer Drone, leise, durchgehend bis {ts(total)}")]
-    with open(os.path.join(OUT, "sounds_zum_ersetzen.txt"), "w") as f:
-        f.write("SOUNDS ZUM ERSETZEN (Startzeit mm:ss.hh | Effekt)\n\n")
-        for t0, name in sorted(fx_list):
-            f.write(f"{ts(t0)} | {name}\n")
+    with open(os.path.join(OUT, f"beschreibung_teil{teil}.txt"), "w") as f:
+        f.write(PART["desc"])
+    with open(os.path.join(OUT, f"sounds_zum_ersetzen_teil{teil}.txt"), "w") as f:
+        f.write(f"SOUNDS ZUM ERSETZEN – Teil {teil} (Startzeit mm:ss.hh | Effekt)\n\n")
+        for t0, nm in fx_list:
+            f.write(f"{ts(t0)} | {nm}\n")
+    style = ("Flat 2D cartoon animation, keep the exact art style, colors, characters and framing of the image. "
+             "Subtle, smooth motion only. No new objects, no text, no camera cuts.")
+    with open(os.path.join(OUT, f"ki_prompts_teil{teil}.txt"), "w") as f:
+        f.write(f"BILD-ZU-VIDEO-PROMPTS – Teil {teil}\n")
+        f.write("Bild: teil{0}_bilder_fuer_ki/szene_XX.png  ·  Format 9:16  ·  Länge: kürzeste Option (5 s)\n".format(teil))
+        f.write("★ = lohnt sich für KI-Bewegung. Ohne ★ reicht der Zoom aus dem fertigen Video.\n")
+        f.write(f"Vor jeden Prompt setzen (Stil-Satz):\n{style}\n\n")
+        for n, dur, fn, txt, fx, motion in scenes:
+            star = motion.startswith("*")
+            f.write(f"{'★' if star else ' '} Szene {n:02d} ({dur:g} s) | {motion.lstrip('*')}\n")
     print("fertig", ts(total))
 
 
