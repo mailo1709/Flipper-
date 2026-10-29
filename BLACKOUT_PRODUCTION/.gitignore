@@ -1,0 +1,6 @@
+VOICE/models/
+VOICE/cache/
+*.wav
+PROJECT_FILES/*/segmente/
+PROJECT_FILES/*/video_ohne_ton.mp4
+__pycache__/

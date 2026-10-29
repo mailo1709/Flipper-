@@ -1,0 +1,565 @@
+{
+ "teil": 2,
+ "gesamtdauer": 49.3,
+ "fps": 30,
+ "szenen": [
+  {
+   "szene": 1,
+   "start": 0.0,
+   "dauer": 2.466666666666667,
+   "text_im_bild": "**TEIL 2**",
+   "effekt": "BLINK",
+   "musik": "dread",
+   "uebergang": "fade",
+   "animation": "Funkgerät vor dunkelrotem Hintergrund, LED pulsiert.",
+   "sfx": [
+    "impact",
+    "static"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Blackout in Hamburg. Teil zwei.",
+     "start": 0.25,
+     "dauer": 1.989
+    }
+   ]
+  },
+  {
+   "szene": 2,
+   "start": 2.467,
+   "dauer": 1.9666666666666666,
+   "text_im_bild": "**A**: DU ANTWORTEST.",
+   "effekt": "",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Seite A leuchtet, Haken ploppt auf.",
+   "sfx": [
+    "whoosh"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Du hast dich entschieden: Du antwortest.",
+     "start": 2.547,
+     "dauer": 1.676
+    }
+   ]
+  },
+  {
+   "szene": 3,
+   "start": 4.433,
+   "dauer": 0.9,
+   "text_im_bild": "**KLICK.**",
+   "effekt": "SHAKE",
+   "musik": "silence",
+   "uebergang": "flash",
+   "animation": "Finger drückt die Sprechtaste, Kamera wackelt.",
+   "sfx": [
+    "ptt"
+   ],
+   "sprache": []
+  },
+  {
+   "szene": 4,
+   "start": 5.333,
+   "dauer": 1.4333333333333333,
+   "text_im_bild": "HALLO? **WER** DA?",
+   "effekt": "",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Jonas spricht ins Funkgerät, Schallbögen.",
+   "sfx": [],
+   "sprache": [
+    {
+     "rolle": "JON",
+     "text": "Hallo? Wer ist da?",
+     "start": 5.413,
+     "dauer": 1.073
+    }
+   ]
+  },
+  {
+   "szene": 5,
+   "start": 6.767,
+   "dauer": 1.3333333333333333,
+   "text_im_bild": "**RAUSCHEN…**",
+   "effekt": "",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Graues Rauschen flackert um das Gerät.",
+   "sfx": [
+    "static"
+   ],
+   "sprache": []
+  },
+  {
+   "szene": 6,
+   "start": 8.1,
+   "dauer": 1.5,
+   "text_im_bild": "**ENDLICH.**",
+   "effekt": "",
+   "musik": "dread",
+   "uebergang": "cut",
+   "animation": "Türkise Wellen pulsieren aus dem Funkgerät.",
+   "sfx": [
+    "squelch",
+    "static"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Endlich hört mich jemand.",
+     "start": 8.18,
+     "dauer": 1.2
+    }
+   ]
+  },
+  {
+   "szene": 7,
+   "start": 9.6,
+   "dauer": 1.1666666666666667,
+   "text_im_bild": "DU **HÖRST** MICH?!",
+   "effekt": "",
+   "musik": "dread",
+   "uebergang": "cut",
+   "animation": "Jonas hält das Funkgerät, überrascht.",
+   "sfx": [],
+   "sprache": [
+    {
+     "rolle": "JON",
+     "text": "Du hörst mich wirklich?",
+     "start": 9.68,
+     "dauer": 0.877
+    }
+   ]
+  },
+  {
+   "szene": 8,
+   "start": 10.767,
+   "dauer": 1.6333333333333333,
+   "text_im_bild": "DER TUNNEL IST EINE **FALLE**.",
+   "effekt": "BLINK",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Karte, rotes X am Elbtunnel pulsiert.",
+   "sfx": [
+    "static"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Der Tunnel ist eine Falle.",
+     "start": 10.847,
+     "dauer": 1.305
+    }
+   ]
+  },
+  {
+   "szene": 9,
+   "start": 12.4,
+   "dauer": 1.6333333333333333,
+   "text_im_bild": "ABER **ALLE** GEHEN HIN…",
+   "effekt": "",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Menge mit Taschenlampen läuft durch die Straße.",
+   "sfx": [
+    "crowd"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Aber draußen laufen alle hin …",
+     "start": 12.48,
+     "dauer": 1.337
+    }
+   ]
+  },
+  {
+   "szene": 10,
+   "start": 14.033,
+   "dauer": 1.2666666666666666,
+   "text_im_bild": "BLEIB **DRIN**.",
+   "effekt": "BLINK",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Funkgerät vibriert, Wellen pulsieren.",
+   "sfx": [
+    "static"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Bleib drin!",
+     "start": 14.113,
+     "dauer": 0.547
+    }
+   ]
+  },
+  {
+   "szene": 11,
+   "start": 15.3,
+   "dauer": 2.3,
+   "text_im_bild": "**2 LITER** PRO TAG.",
+   "effekt": "",
+   "musik": "calm",
+   "uebergang": "cut",
+   "animation": "Wasserflaschen, Text 2 L × 10 Tage.",
+   "sfx": [
+    "static"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Hast du Wasser? Zwei Liter pro Tag.",
+     "start": 15.38,
+     "dauer": 2.002
+    }
+   ]
+  },
+  {
+   "szene": 12,
+   "start": 17.6,
+   "dauer": 2.6333333333333333,
+   "text_im_bild": "ECHTE **REGEL**!",
+   "effekt": "",
+   "musik": "calm",
+   "uebergang": "cut",
+   "animation": "Haken erscheint über den Flaschen.",
+   "sfx": [],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Stimmt wirklich: Vorrat für zehn Tage.",
+     "start": 17.68,
+     "dauer": 2.343
+    }
+   ]
+  },
+  {
+   "szene": 13,
+   "start": 20.233,
+   "dauer": 1.8333333333333333,
+   "text_im_bild": "**2 %**",
+   "effekt": "BLINK",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Akku blinkt rot.",
+   "sfx": [
+    "battery"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Handy-Akku: zwei Prozent.",
+     "start": 20.313,
+     "dauer": 1.522
+    }
+   ]
+  },
+  {
+   "szene": 14,
+   "start": 22.067,
+   "dauer": 1.1666666666666667,
+   "text_im_bild": "WER **BIST** DU?",
+   "effekt": "",
+   "musik": "dread",
+   "uebergang": "cut",
+   "animation": "Jonas denkt, Gedankenblase mit Fragezeichen.",
+   "sfx": [],
+   "sprache": [
+    {
+     "rolle": "JON",
+     "text": "Wer bist du?",
+     "start": 22.147,
+     "dauer": 0.543
+    }
+   ]
+  },
+  {
+   "szene": 15,
+   "start": 23.233,
+   "dauer": 2.466666666666667,
+   "text_im_bild": "ICH BIN'S. **OPA.**",
+   "effekt": "BLINK",
+   "musik": "dread",
+   "uebergang": "cut",
+   "animation": "Funkgerät, LED pulsiert langsam.",
+   "sfx": [
+    "static",
+    "heartbeat"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Ich bin's, Jonas. Dein Opa.",
+     "start": 23.313,
+     "dauer": 2.152
+    }
+   ]
+  },
+  {
+   "szene": 16,
+   "start": 25.7,
+   "dauer": 1.0,
+   "text_im_bild": "**OPA?!**",
+   "effekt": "SHAKE",
+   "musik": "peak",
+   "uebergang": "flash",
+   "animation": "Extreme Nahaufnahme, Schock.",
+   "sfx": [
+    "impact"
+   ],
+   "sprache": [
+    {
+     "rolle": "JON",
+     "text": "Opa?!",
+     "start": 25.78,
+     "dauer": 0.362
+    }
+   ]
+  },
+  {
+   "szene": 17,
+   "start": 26.7,
+   "dauer": 2.066666666666667,
+   "text_im_bild": "OPA IST SEIT **3 JAHREN** TOT.",
+   "effekt": "",
+   "musik": "dread",
+   "uebergang": "fade",
+   "animation": "Foto von Opa mit Trauerflor, Kerze flackert.",
+   "sfx": [
+    "wind"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Aber Opa ist seit drei Jahren tot.",
+     "start": 26.95,
+     "dauer": 1.593
+    }
+   ]
+  },
+  {
+   "szene": 18,
+   "start": 28.767,
+   "dauer": 1.4333333333333333,
+   "text_im_bild": "**KLOPF. KLOPF.**",
+   "effekt": "SHAKE",
+   "musik": "silence",
+   "uebergang": "flash",
+   "animation": "Wohnungstür, Klopfen, Kamera wackelt.",
+   "sfx": [
+    "knock"
+   ],
+   "sprache": []
+  },
+  {
+   "szene": 19,
+   "start": 30.2,
+   "dauer": 1.4333333333333333,
+   "text_im_bild": "DIE **KLINKE**…",
+   "effekt": "SHAKE",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Türklinke senkt sich langsam.",
+   "sfx": [
+    "handle"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Die Klinke bewegt sich.",
+     "start": 30.28,
+     "dauer": 0.973
+    }
+   ]
+  },
+  {
+   "szene": 20,
+   "start": 31.633,
+   "dauer": 1.1666666666666667,
+   "text_im_bild": "NICHT **AUFMACHEN**!",
+   "effekt": "BLINK",
+   "musik": "peak",
+   "uebergang": "flash",
+   "animation": "Funkgerät vibriert stark.",
+   "sfx": [
+    "static",
+    "squelch"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Nicht aufmachen!",
+     "start": 31.713,
+     "dauer": 0.699
+    }
+   ]
+  },
+  {
+   "szene": 21,
+   "start": 32.8,
+   "dauer": 1.1666666666666667,
+   "text_im_bild": "**1 %**",
+   "effekt": "BLINK",
+   "musik": "tension",
+   "uebergang": "cut",
+   "animation": "Akku blinkt rot.",
+   "sfx": [
+    "battery"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Ein Prozent.",
+     "start": 32.88,
+     "dauer": 0.649
+    }
+   ]
+  },
+  {
+   "szene": 22,
+   "start": 33.967,
+   "dauer": 1.3666666666666667,
+   "text_im_bild": "KERZE **AUS**.",
+   "effekt": "",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Rauch steigt vom Docht auf, es wird dunkel.",
+   "sfx": [
+    "candle_out"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Die Kerze geht aus.",
+     "start": 34.047,
+     "dauer": 1.076
+    }
+   ]
+  },
+  {
+   "szene": 23,
+   "start": 35.333,
+   "dauer": 1.8,
+   "text_im_bild": "**STILLE.**",
+   "effekt": "",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Stille. Nur Jonas' Augen im Dunkeln, blinzeln.",
+   "sfx": [
+    "heartbeat"
+   ],
+   "sprache": []
+  },
+  {
+   "szene": 24,
+   "start": 37.133,
+   "dauer": 2.433333333333333,
+   "text_im_bild": "LICHT UNTER DER **TÜR**.",
+   "effekt": "",
+   "musik": "dread",
+   "uebergang": "cut",
+   "animation": "Licht unter der Tür, Schatten von zwei Füßen bewegen sich.",
+   "sfx": [
+    "footsteps",
+    "creak"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Unter der Tür: Licht. Da steht jemand.",
+     "start": 37.213,
+     "dauer": 2.138
+    }
+   ]
+  },
+  {
+   "szene": 25,
+   "start": 39.567,
+   "dauer": 1.7,
+   "text_im_bild": "DAS **FENSTER**. JETZT.",
+   "effekt": "BLINK",
+   "musik": "peak",
+   "uebergang": "cut",
+   "animation": "Türkise Wellen pulsieren.",
+   "sfx": [
+    "static",
+    "squelch"
+   ],
+   "sprache": [
+    {
+     "rolle": "FUNK",
+     "text": "Das Fenster. Jetzt!",
+     "start": 39.647,
+     "dauer": 1.414
+    }
+   ]
+  },
+  {
+   "szene": 26,
+   "start": 41.267,
+   "dauer": 3.533333333333333,
+   "text_im_bild": "A ODER **B**?",
+   "effekt": "",
+   "musik": "peak",
+   "uebergang": "cut",
+   "animation": "Split-Screen Tür / Fenster.",
+   "sfx": [
+    "riser"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "A: Du öffnest die Tür. B: Du kletterst aus dem Fenster.",
+     "start": 41.347,
+     "dauer": 3.22
+    }
+   ]
+  },
+  {
+   "szene": 27,
+   "start": 44.8,
+   "dauer": 1.6333333333333333,
+   "text_im_bild": "**DU** ENTSCHEIDEST.",
+   "effekt": "BLINK",
+   "musik": "silence",
+   "uebergang": "cut",
+   "animation": "Rote Uhr, Countdown 3-2-1.",
+   "sfx": [
+    "tick"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Du entscheidest.",
+     "start": 44.88,
+     "dauer": 0.788
+    }
+   ]
+  },
+  {
+   "szene": 28,
+   "start": 46.433,
+   "dauer": 2.8666666666666667,
+   "text_im_bild": null,
+   "effekt": "",
+   "musik": "outro",
+   "uebergang": "cut",
+   "animation": "Türkis umrandete Box pulsiert.",
+   "sfx": [
+    "impact"
+   ],
+   "sprache": [
+    {
+     "rolle": "ERZ",
+     "text": "Schreib A oder B in die Kommentare!",
+     "start": 46.513,
+     "dauer": 2.489
+    }
+   ]
+  }
+ ]
+}

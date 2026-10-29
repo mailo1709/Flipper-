@@ -1,0 +1,288 @@
+BLACKOUT HAMBURG – DREHBUCH TEIL 1 – DER STROMAUSFALL
+Länge: 60.6 s · Format 1080 x 1920 (9:16) · 30 fps
+
+SPRECHERROLLEN:
+  ERZ: Erzähler (tief, ruhig, ernst)
+  JON: Jonas (natürlich, junger Mann, leicht verängstigt)
+  FUNK: Funkgerät (geheimnisvoll, Funkfilter, Rauschen)
+  RADIO: Radiosprecherin (Notfall-Durchsage)
+
+SZENE 01  [00:00.00 – 00:02.97, 2.97 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_01.png
+  Text im Bild: BLACKOUT HAMBURG
+  ERZ   (2.5 s ab 00:00.25): Blackout in Hamburg. Was würdest du tun?
+  Geräusche:   tiefer Impact, Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Langsamer Zoom auf Jonas, Handylicht flackert, Jonas atmet und blinzelt.  (Übergang: fade, Effekt: –)
+
+SZENE 02  [00:02.97 – 00:04.40, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_02.png
+  Text im Bild: 21:47 UHR
+  ERZ   (1.1 s ab 00:03.05): Du zockst gerade.
+  Geräusche:   Game-Sounds
+  Musik:       ruhig (weicher Pad, leises Arpeggio)
+  Animation:   Monitor leuchtet, Jonas spielt konzentriert, leichtes Atmen.  (Übergang: cut, Effekt: –)
+
+SZENE 03  [00:04.40 – 00:05.57, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_03.png
+  Text im Bild: ZACK.
+  ERZ   (0.7 s ab 00:04.48): Und dann: zack.
+  Geräusche:   Stromausfall (Abschalten), tiefer Impact
+  Musik:       Stille (Musik aus)
+  Animation:   Monitor aus, Raum fast schwarz, Kamera wackelt.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 04  [00:05.57 – 00:06.90, 1.33 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_04.png
+  Text im Bild: NICHTS.
+  JON   (0.8 s ab 00:05.65): Licht? … Nichts.
+  Geräusche:   Lichtschalter-Klicks
+  Musik:       Stille (Musik aus)
+  Animation:   Jonas drückt den Lichtschalter, nichts passiert, Fragezeichen.  (Übergang: cut, Effekt: –)
+
+SZENE 05  [00:06.90 – 00:08.60, 1.70 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_05.png
+  Text im Bild: DIE STRASSE…
+  ERZ   (1.4 s ab 00:06.98): Die ganze Straße ist dunkel.
+  Geräusche:   Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Langsame Fahrt durchs Fenster auf die dunkle Straße, Laternen aus.  (Übergang: cut, Effekt: –)
+
+SZENE 06  [00:08.60 – 00:10.23, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_06.png
+  Text im Bild: GANZ HAMBURG.
+  ERZ   (0.8 s ab 00:08.68): Ganz Hamburg.
+  Geräusche:   Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Skyline mit Kränen und Elbphilharmonie, Wasser schimmert, alle Lichter aus.  (Übergang: cut, Effekt: –)
+
+SZENE 07  [00:10.23 – 00:11.77, 1.53 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_07.png
+  Text im Bild: KEIN NETZ.
+  ERZ   (1.2 s ab 00:10.31): Dein Handy: kein Netz.
+  Geräusche:   Fehlerton Handy
+  Musik:       düster (tiefer Drone)
+  Animation:   Handy-Display, rotes X über dem Funkmast.  (Übergang: cut, Effekt: –)
+
+SZENE 08  [00:11.77 – 00:13.97, 2.20 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_08.png
+  Text im Bild: 23 %
+  ERZ   (1.9 s ab 00:11.85): Akku: dreiundzwanzig Prozent.
+  Geräusche:   Herzschlag
+  Musik:       düster (tiefer Drone)
+  Animation:   Akku-Symbol pulsiert.  (Übergang: cut, Effekt: –)
+
+SZENE 09  [00:13.97 – 00:15.60, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_09.png
+  Text im Bild: KÜHLSCHRANK AUS.
+  ERZ   (1.3 s ab 00:14.05): Der Kühlschrank ist aus.
+  Geräusche:   Kühlschranktür
+  Musik:       düster (tiefer Drone)
+  Animation:   Offener, dunkler Kühlschrank, Jonas blickt hinein.  (Übergang: cut, Effekt: –)
+
+SZENE 10  [00:15.60 – 00:17.33, 1.73 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_10.png
+  Text im Bild: TROPFEN.
+  ERZ   (1.4 s ab 00:15.68): Aus dem Hahn: nur noch Tropfen.
+  Geräusche:   Wassertropfen
+  Musik:       düster (tiefer Drone)
+  Animation:   Tropfen fallen aus dem Wasserhahn.  (Übergang: cut, Effekt: –)
+
+SZENE 11  [00:17.33 – 00:18.97, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_11.png
+  Text im Bild: RUHIG BLEIBEN.
+  JON   (1.3 s ab 00:17.41): Okay. Ruhig bleiben.
+  Geräusche:   Streichholz
+  Musik:       ruhig (weicher Pad, leises Arpeggio)
+  Animation:   Jonas zündet eine Kerze an, Flamme flackert, warmes Licht.  (Übergang: cut, Effekt: –)
+
+SZENE 12  [00:18.97 – 00:20.80, 1.83 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_12.png
+  Text im Bild: DIE REGEL:
+  ERZ   (1.5 s ab 00:19.05): Erste Regel bei Stromausfall:
+  Geräusche:   –
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Gedankenblase mit Radio ploppt auf und wippt.  (Übergang: cut, Effekt: –)
+
+SZENE 13  [00:20.80 – 00:22.97, 2.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_13.png
+  Text im Bild: RADIO AN.
+  ERZ   (1.9 s ab 00:20.88): Batterie- oder Kurbelradio an.
+  Geräusche:   Kurbel-Ratschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Hand dreht die Kurbel des Radios.  (Übergang: cut, Effekt: –)
+
+SZENE 14  [00:22.97 – 00:25.10, 2.13 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_14.png
+  Text im Bild: ECHTE REGEL!
+  ERZ   (1.8 s ab 00:23.05): Empfiehlt auch der Katastrophenschutz.
+  Geräusche:   Radio-Sendersuche
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Türkise Schallwellen breiten sich aus, Haken erscheint.  (Übergang: cut, Effekt: –)
+
+SZENE 15  [00:25.10 – 00:26.73, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_15.png
+  Text im Bild: BLEIBT ZUHAUSE.
+  RADIO (1.3 s ab 00:25.18): Bleiben Sie zu Hause!
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Lautsprecher leuchtet türkis, Wellen pulsieren.  (Übergang: cut, Effekt: –)
+
+SZENE 16  [00:26.73 – 00:28.33, 1.60 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_16.png
+  Text im Bild: 23:12
+  ERZ   (1.1 s ab 00:26.98): Eine Stunde später.
+  Geräusche:   Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Zeitsprung: Jonas unter der Decke, Kerze flackert.  (Übergang: fade, Effekt: –)
+
+SZENE 17  [00:28.33 – 00:29.77, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_17.png
+  Text im Bild: KLOPF.
+  (kein Text – nur Geräusch)
+  Geräusche:   Klopfen an der Tür
+  Musik:       Stille (Musik aus)
+  Animation:   Wohnungstür, drei Klopfer mit Klopf-Strichen, Kamera wackelt.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 18  [00:29.77 – 00:31.13, 1.37 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_18.png
+  Text im Bild: WER… DA?
+  JON   (1.1 s ab 00:29.85): Wer klopft um diese Zeit?
+  Geräusche:   Herzschlag
+  Musik:       Stille (Musik aus)
+  Animation:   Jonas erstarrt mit großen Augen, Schweißtropfen.  (Übergang: cut, Effekt: –)
+
+SZENE 19  [00:31.13 – 00:32.47, 1.33 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_19.png
+  Text im Bild: NIEMAND.
+  ERZ   (0.5 s ab 00:31.21): Niemand.
+  Geräusche:   leises Knarren, Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Blick durch den Türspion: leerer, dunkler Flur, leichte Fischaugen-Drift.  (Übergang: cut, Effekt: –)
+
+SZENE 20  [00:32.47 – 00:35.17, 2.70 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_20.png
+  Text im Bild: OPAS KISTE.
+  ERZ   (2.4 s ab 00:32.55): Dann: rotes Licht. Aus Opas Kiste.
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Rotes Licht pulsiert durch den Spalt des Kartons.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 21  [00:35.17 – 00:36.90, 1.73 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_21.png
+  Text im Bild: DAS FUNKGERÄT.
+  ERZ   (1.4 s ab 00:35.25): Opas altes Funkgerät.
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Funkgerät im Karton, LED blinkt.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 22  [00:36.90 – 00:37.97, 1.07 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_22.png
+  Text im Bild: ES IST AN.
+  JON   (0.6 s ab 00:36.98): Es ist an?
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Jonas hält das Funkgerät, LED blinkt.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 23  [00:37.97 – 00:40.20, 2.23 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_23.png
+  Text im Bild: KEINE BATTERIEN.
+  ERZ   (1.9 s ab 00:38.05): Aber da sind keine Batterien drin.
+  Geräusche:   tiefer Impact
+  Musik:       Stille (Musik aus)
+  Animation:   Nahaufnahme leeres Batteriefach.  (Übergang: cut, Effekt: –)
+
+SZENE 24  [00:40.20 – 00:41.53, 1.33 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_24.png
+  Text im Bild: HÖRT MICH JEMAND?
+  FUNK  (0.7 s ab 00:40.28): Hört mich jemand?
+  Geräusche:   Funk-Verbindungston, Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Funkgerät vibriert, Zickzack-Wellen.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 25  [00:41.53 – 00:42.53, 1.00 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_25.png
+  Text im Bild: WAS?!
+  JON   (0.3 s ab 00:41.61): Was?!
+  Geräusche:   tiefer Impact
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Extreme Nahaufnahme, Schock, Strahlen drehen sich.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 26  [00:42.53 – 00:44.17, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_26.png
+  Text im Bild: NICHT ZUM ELBTUNNEL!
+  FUNK  (1.1 s ab 00:42.61): Geht nicht zum Elbtunnel!
+  Geräusche:   Funkrauschen
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Karte Hamburg, rotes X am Elbtunnel pulsiert.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 27  [00:44.17 – 00:46.00, 1.83 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_27.png
+  Text im Bild: ALLE GEHEN…
+  ERZ   (1.5 s ab 00:44.25): Aber draußen laufen alle los …
+  Geräusche:   Menschenmenge + Schritte
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Menschenmenge mit Taschenlampen läuft durch die Straße.  (Übergang: cut, Effekt: –)
+
+SZENE 28  [00:46.00 – 00:47.43, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_28.png
+  Text im Bild: …ZUM TUNNEL.
+  ERZ   (1.1 s ab 00:46.08): … genau zum Tunnel.
+  Geräusche:   Menschenmenge + Schritte
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Menge von hinten, Lichtkegel schwenken Richtung Fluss.  (Übergang: cut, Effekt: –)
+
+SZENE 29  [00:47.43 – 00:49.23, 1.80 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_29.png
+  Text im Bild: SIE WISSEN ES.
+  FUNK  (1.2 s ab 00:47.51): Sie wissen, dass du zuhörst.
+  Geräusche:   Funkrauschen, Herzschlag
+  Musik:       düster (tiefer Drone)
+  Animation:   Funkgerät vor dunkelrotem Hintergrund, LED blinkt schnell.  (Übergang: cut, Effekt: BLINKFAST)
+
+SZENE 30  [00:49.23 – 00:50.47, 1.23 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_30.png
+  Text im Bild: WOHER?!
+  JON   (0.9 s ab 00:49.31): Woher wissen die das?!
+  Geräusche:   tiefer Impact
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Jonas weicht an die Wand zurück, Bewegungslinien.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 31  [00:50.47 – 00:52.27, 1.80 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_31.png
+  Text im Bild: 4 %
+  ERZ   (1.5 s ab 00:50.55): Handy-Akku: vier Prozent.
+  Geräusche:   Akku-Warnton
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Akku-Symbol blinkt rot.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 32  [00:52.27 – 00:53.43, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_32.png
+  Text im Bild: ANTWORTEN?
+  ERZ   (0.8 s ab 00:52.35): Antwortest du?
+  Geräusche:   –
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Finger zittert über der Sprechtaste.  (Übergang: cut, Effekt: –)
+
+SZENE 33  [00:53.43 – 00:56.13, 2.70 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_33.png
+  Text im Bild: A ODER B?
+  ERZ   (2.4 s ab 00:53.51): A: Du antwortest. B: Du schaltest es aus.
+  Geräusche:   Spannungs-Riser
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Split-Screen A/B, beide Jonas atmen.  (Übergang: cut, Effekt: –)
+
+SZENE 34  [00:56.13 – 00:57.77, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_34.png
+  Text im Bild: DU ENTSCHEIDEST.
+  ERZ   (0.8 s ab 00:56.21): Du entscheidest.
+  Geräusche:   Uhr-Ticken
+  Musik:       Stille (Musik aus)
+  Animation:   Rote Uhr pulsiert, Countdown 3-2-1.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 35  [00:57.77 – 01:00.63, 2.87 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_1/original_1080x1920/szene_35.png
+  Text im Bild: –
+  ERZ   (2.5 s ab 00:57.85): Schreib A oder B in die Kommentare!
+  Geräusche:   tiefer Impact
+  Musik:       Abspann (Drone + Pad)
+  Animation:   Türkis umrandete Box pulsiert.  (Übergang: cut, Effekt: –)

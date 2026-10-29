@@ -1,0 +1,36 @@
+BILD-ZU-VIDEO-PROMPTS – Teil 2 (optional, z. B. Kling AI)
+Bild: EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_XX.png · 9:16 · 5 s
+Fertigen Clip speichern als KI_CLIPS/TEIL_2/szene_XX.mp4 und produce.py 2 neu starten.
+★ = lohnt sich für KI-Bewegung.
+
+Stil-Satz (immer davor setzen):
+Flat 2D cartoon animation, keep the exact art style, colors, characters and framing of the image. Subtle, smooth motion only. No new objects, no text, no camera cuts, no 3D, no realism.
+
+  Szene 01 | Red LED blinks, red light pulses
+  Szene 02 | Left side glows, checkmark pops
+★ Szene 03 | Finger presses the side button firmly
+★ Szene 04 | The boy speaks into the walkie-talkie, mouth moves, sound arcs pulse
+  Szene 05 | Grey static waves flicker around the device
+★ Szene 06 | Turquoise sound waves pulse out of the walkie-talkie
+★ Szene 07 | The boy pulls the walkie-talkie closer, surprised
+  Szene 08 | Red X pulses, river shimmers
+★ Szene 09 | Tiny people with flashlights walk to the right
+  Szene 10 | Walkie-talkie vibrates, waves pulse
+  Szene 11 | Water in the bottles sloshes gently
+  Szene 12 | Checkmark pops in
+  Szene 13 | Battery outline blinks red
+  Szene 14 | Thought bubble wobbles, the boy looks up
+★ Szene 15 | Red LED blinks slowly, light breathes, slow push-in
+★ Szene 16 | The face reacts in shock, sweat drops fly
+★ Szene 17 | Candle flickers, slow push-in to the old photo
+★ Szene 18 | The door shakes from knocking
+★ Szene 19 | The door handle slowly moves down
+  Szene 20 | Walkie-talkie vibrates hard
+  Szene 21 | Battery outline blinks red
+★ Szene 22 | Thin smoke rises from the candle wick
+★ Szene 23 | Eyes in the dark blink and look sideways
+★ Szene 24 | Light under the door moves, shadows of two feet shift
+  Szene 25 | Turquoise waves pulse
+  Szene 26 | Both sides: subtle movement, letters pulse
+  Szene 27 | Red clock pulses (use original)
+  Szene 28 | Box glows softly (use original)

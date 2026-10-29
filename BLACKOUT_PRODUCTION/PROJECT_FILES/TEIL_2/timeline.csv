@@ -1,0 +1,29 @@
+Szene;Start;Dauer;Text im Bild;Sprecher;Gesprochener Text;Musik;Geräusche
+1;0.00;2.47;TEIL 2;ERZ;Blackout in Hamburg. Teil zwei.;dread;impact, static
+2;2.47;1.97;A: DU ANTWORTEST.;ERZ;Du hast dich entschieden: Du antwortest.;tension;whoosh
+3;4.43;0.90;KLICK.;;;silence;ptt
+4;5.33;1.43;HALLO? WER DA?;JON;Hallo? Wer ist da?;silence;
+5;6.77;1.33;RAUSCHEN…;;;silence;static
+6;8.10;1.50;ENDLICH.;FUNK;Endlich hört mich jemand.;dread;squelch, static
+7;9.60;1.17;DU HÖRST MICH?!;JON;Du hörst mich wirklich?;dread;
+8;10.77;1.63;DER TUNNEL IST EINE FALLE.;FUNK;Der Tunnel ist eine Falle.;tension;static
+9;12.40;1.63;ABER ALLE GEHEN HIN…;ERZ;Aber draußen laufen alle hin …;tension;crowd
+10;14.03;1.27;BLEIB DRIN.;FUNK;Bleib drin!;tension;static
+11;15.30;2.30;2 LITER PRO TAG.;FUNK;Hast du Wasser? Zwei Liter pro Tag.;calm;static
+12;17.60;2.63;ECHTE REGEL!;ERZ;Stimmt wirklich: Vorrat für zehn Tage.;calm;
+13;20.23;1.83;2 %;ERZ;Handy-Akku: zwei Prozent.;tension;battery
+14;22.07;1.17;WER BIST DU?;JON;Wer bist du?;dread;
+15;23.23;2.47;ICH BIN'S. OPA.;FUNK;Ich bin's, Jonas. Dein Opa.;dread;static, heartbeat
+16;25.70;1.00;OPA?!;JON;Opa?!;peak;impact
+17;26.70;2.07;OPA IST SEIT 3 JAHREN TOT.;ERZ;Aber Opa ist seit drei Jahren tot.;dread;wind
+18;28.77;1.43;KLOPF. KLOPF.;;;silence;knock
+19;30.20;1.43;DIE KLINKE…;ERZ;Die Klinke bewegt sich.;silence;handle
+20;31.63;1.17;NICHT AUFMACHEN!;FUNK;Nicht aufmachen!;peak;static, squelch
+21;32.80;1.17;1 %;ERZ;Ein Prozent.;tension;battery
+22;33.97;1.37;KERZE AUS.;ERZ;Die Kerze geht aus.;silence;candle_out
+23;35.33;1.80;STILLE.;;;silence;heartbeat
+24;37.13;2.43;LICHT UNTER DER TÜR.;ERZ;Unter der Tür: Licht. Da steht jemand.;dread;footsteps, creak
+25;39.57;1.70;DAS FENSTER. JETZT.;FUNK;Das Fenster. Jetzt!;peak;static, squelch
+26;41.27;3.53;A ODER B?;ERZ;A: Du öffnest die Tür. B: Du kletterst aus dem Fenster.;peak;riser
+27;44.80;1.63;DU ENTSCHEIDEST.;ERZ;Du entscheidest.;silence;tick
+28;46.43;2.87;;ERZ;Schreib A oder B in die Kommentare!;outro;impact
