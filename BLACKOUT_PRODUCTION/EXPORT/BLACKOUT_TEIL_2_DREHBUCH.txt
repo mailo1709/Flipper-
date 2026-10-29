@@ -1,0 +1,232 @@
+BLACKOUT HAMBURG – DREHBUCH TEIL 2 – DIE STIMME IM FUNKGERÄT
+Länge: 49.3 s · Format 1080 x 1920 (9:16) · 30 fps
+
+SPRECHERROLLEN:
+  ERZ: Erzähler (tief, ruhig, ernst)
+  JON: Jonas (natürlich, junger Mann, leicht verängstigt)
+  FUNK: Funkgerät (geheimnisvoll, Funkfilter, Rauschen)
+  RADIO: Radiosprecherin (Notfall-Durchsage)
+
+SZENE 01  [00:00.00 – 00:02.47, 2.47 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_01.png
+  Text im Bild: TEIL 2
+  ERZ   (2.0 s ab 00:00.25): Blackout in Hamburg. Teil zwei.
+  Geräusche:   tiefer Impact, Funkrauschen
+  Musik:       düster (tiefer Drone)
+  Animation:   Funkgerät vor dunkelrotem Hintergrund, LED pulsiert.  (Übergang: fade, Effekt: BLINK)
+
+SZENE 02  [00:02.47 – 00:04.43, 1.97 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_02.png
+  Text im Bild: A: DU ANTWORTEST.
+  ERZ   (1.7 s ab 00:02.55): Du hast dich entschieden: Du antwortest.
+  Geräusche:   Whoosh
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Seite A leuchtet, Haken ploppt auf.  (Übergang: cut, Effekt: –)
+
+SZENE 03  [00:04.43 – 00:05.33, 0.90 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_03.png
+  Text im Bild: KLICK.
+  (kein Text – nur Geräusch)
+  Geräusche:   Funkgerät-Klick (Sprechtaste)
+  Musik:       Stille (Musik aus)
+  Animation:   Finger drückt die Sprechtaste, Kamera wackelt.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 04  [00:05.33 – 00:06.77, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_04.png
+  Text im Bild: HALLO? WER DA?
+  JON   (1.1 s ab 00:05.41): Hallo? Wer ist da?
+  Geräusche:   –
+  Musik:       Stille (Musik aus)
+  Animation:   Jonas spricht ins Funkgerät, Schallbögen.  (Übergang: cut, Effekt: –)
+
+SZENE 05  [00:06.77 – 00:08.10, 1.33 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_05.png
+  Text im Bild: RAUSCHEN…
+  (kein Text – nur Geräusch)
+  Geräusche:   Funkrauschen
+  Musik:       Stille (Musik aus)
+  Animation:   Graues Rauschen flackert um das Gerät.  (Übergang: cut, Effekt: –)
+
+SZENE 06  [00:08.10 – 00:09.60, 1.50 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_06.png
+  Text im Bild: ENDLICH.
+  FUNK  (1.2 s ab 00:08.18): Endlich hört mich jemand.
+  Geräusche:   Funk-Verbindungston, Funkrauschen
+  Musik:       düster (tiefer Drone)
+  Animation:   Türkise Wellen pulsieren aus dem Funkgerät.  (Übergang: cut, Effekt: –)
+
+SZENE 07  [00:09.60 – 00:10.77, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_07.png
+  Text im Bild: DU HÖRST MICH?!
+  JON   (0.9 s ab 00:09.68): Du hörst mich wirklich?
+  Geräusche:   –
+  Musik:       düster (tiefer Drone)
+  Animation:   Jonas hält das Funkgerät, überrascht.  (Übergang: cut, Effekt: –)
+
+SZENE 08  [00:10.77 – 00:12.40, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_08.png
+  Text im Bild: DER TUNNEL IST EINE FALLE.
+  FUNK  (1.3 s ab 00:10.85): Der Tunnel ist eine Falle.
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Karte, rotes X am Elbtunnel pulsiert.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 09  [00:12.40 – 00:14.03, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_09.png
+  Text im Bild: ABER ALLE GEHEN HIN…
+  ERZ   (1.3 s ab 00:12.48): Aber draußen laufen alle hin …
+  Geräusche:   Menschenmenge + Schritte
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Menge mit Taschenlampen läuft durch die Straße.  (Übergang: cut, Effekt: –)
+
+SZENE 10  [00:14.03 – 00:15.30, 1.27 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_10.png
+  Text im Bild: BLEIB DRIN.
+  FUNK  (0.5 s ab 00:14.11): Bleib drin!
+  Geräusche:   Funkrauschen
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Funkgerät vibriert, Wellen pulsieren.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 11  [00:15.30 – 00:17.60, 2.30 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_11.png
+  Text im Bild: 2 LITER PRO TAG.
+  FUNK  (2.0 s ab 00:15.38): Hast du Wasser? Zwei Liter pro Tag.
+  Geräusche:   Funkrauschen
+  Musik:       ruhig (weicher Pad, leises Arpeggio)
+  Animation:   Wasserflaschen, Text 2 L × 10 Tage.  (Übergang: cut, Effekt: –)
+
+SZENE 12  [00:17.60 – 00:20.23, 2.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_12.png
+  Text im Bild: ECHTE REGEL!
+  ERZ   (2.3 s ab 00:17.68): Stimmt wirklich: Vorrat für zehn Tage.
+  Geräusche:   –
+  Musik:       ruhig (weicher Pad, leises Arpeggio)
+  Animation:   Haken erscheint über den Flaschen.  (Übergang: cut, Effekt: –)
+
+SZENE 13  [00:20.23 – 00:22.07, 1.83 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_13.png
+  Text im Bild: 2 %
+  ERZ   (1.5 s ab 00:20.31): Handy-Akku: zwei Prozent.
+  Geräusche:   Akku-Warnton
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Akku blinkt rot.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 14  [00:22.07 – 00:23.23, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_14.png
+  Text im Bild: WER BIST DU?
+  JON   (0.5 s ab 00:22.15): Wer bist du?
+  Geräusche:   –
+  Musik:       düster (tiefer Drone)
+  Animation:   Jonas denkt, Gedankenblase mit Fragezeichen.  (Übergang: cut, Effekt: –)
+
+SZENE 15  [00:23.23 – 00:25.70, 2.47 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_15.png
+  Text im Bild: ICH BIN'S. OPA.
+  FUNK  (2.2 s ab 00:23.31): Ich bin's, Jonas. Dein Opa.
+  Geräusche:   Funkrauschen, Herzschlag
+  Musik:       düster (tiefer Drone)
+  Animation:   Funkgerät, LED pulsiert langsam.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 16  [00:25.70 – 00:26.70, 1.00 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_16.png
+  Text im Bild: OPA?!
+  JON   (0.4 s ab 00:25.78): Opa?!
+  Geräusche:   tiefer Impact
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Extreme Nahaufnahme, Schock.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 17  [00:26.70 – 00:28.77, 2.07 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_17.png
+  Text im Bild: OPA IST SEIT 3 JAHREN TOT.
+  ERZ   (1.6 s ab 00:26.95): Aber Opa ist seit drei Jahren tot.
+  Geräusche:   Wind
+  Musik:       düster (tiefer Drone)
+  Animation:   Foto von Opa mit Trauerflor, Kerze flackert.  (Übergang: fade, Effekt: –)
+
+SZENE 18  [00:28.77 – 00:30.20, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_18.png
+  Text im Bild: KLOPF. KLOPF.
+  (kein Text – nur Geräusch)
+  Geräusche:   Klopfen an der Tür
+  Musik:       Stille (Musik aus)
+  Animation:   Wohnungstür, Klopfen, Kamera wackelt.  (Übergang: flash, Effekt: SHAKE)
+
+SZENE 19  [00:30.20 – 00:31.63, 1.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_19.png
+  Text im Bild: DIE KLINKE…
+  ERZ   (1.0 s ab 00:30.28): Die Klinke bewegt sich.
+  Geräusche:   Türklinke
+  Musik:       Stille (Musik aus)
+  Animation:   Türklinke senkt sich langsam.  (Übergang: cut, Effekt: SHAKE)
+
+SZENE 20  [00:31.63 – 00:32.80, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_20.png
+  Text im Bild: NICHT AUFMACHEN!
+  FUNK  (0.7 s ab 00:31.71): Nicht aufmachen!
+  Geräusche:   Funkrauschen, Funk-Verbindungston
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Funkgerät vibriert stark.  (Übergang: flash, Effekt: BLINK)
+
+SZENE 21  [00:32.80 – 00:33.97, 1.17 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_21.png
+  Text im Bild: 1 %
+  ERZ   (0.6 s ab 00:32.88): Ein Prozent.
+  Geräusche:   Akku-Warnton
+  Musik:       Spannung (Puls, Streicher-Tremolo)
+  Animation:   Akku blinkt rot.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 22  [00:33.97 – 00:35.33, 1.37 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_22.png
+  Text im Bild: KERZE AUS.
+  ERZ   (1.1 s ab 00:34.05): Die Kerze geht aus.
+  Geräusche:   Kerze geht aus
+  Musik:       Stille (Musik aus)
+  Animation:   Rauch steigt vom Docht auf, es wird dunkel.  (Übergang: cut, Effekt: –)
+
+SZENE 23  [00:35.33 – 00:37.13, 1.80 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_23.png
+  Text im Bild: STILLE.
+  (kein Text – nur Geräusch)
+  Geräusche:   Herzschlag
+  Musik:       Stille (Musik aus)
+  Animation:   Stille. Nur Jonas' Augen im Dunkeln, blinzeln.  (Übergang: cut, Effekt: –)
+
+SZENE 24  [00:37.13 – 00:39.57, 2.43 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_24.png
+  Text im Bild: LICHT UNTER DER TÜR.
+  ERZ   (2.1 s ab 00:37.21): Unter der Tür: Licht. Da steht jemand.
+  Geräusche:   Schritte, leises Knarren
+  Musik:       düster (tiefer Drone)
+  Animation:   Licht unter der Tür, Schatten von zwei Füßen bewegen sich.  (Übergang: cut, Effekt: –)
+
+SZENE 25  [00:39.57 – 00:41.27, 1.70 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_25.png
+  Text im Bild: DAS FENSTER. JETZT.
+  FUNK  (1.4 s ab 00:39.65): Das Fenster. Jetzt!
+  Geräusche:   Funkrauschen, Funk-Verbindungston
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Türkise Wellen pulsieren.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 26  [00:41.27 – 00:44.80, 3.53 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_26.png
+  Text im Bild: A ODER B?
+  ERZ   (3.2 s ab 00:41.35): A: Du öffnest die Tür. B: Du kletterst aus dem Fenster.
+  Geräusche:   Spannungs-Riser
+  Musik:       Höhepunkt (Puls + Schläge)
+  Animation:   Split-Screen Tür / Fenster.  (Übergang: cut, Effekt: –)
+
+SZENE 27  [00:44.80 – 00:46.43, 1.63 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_27.png
+  Text im Bild: DU ENTSCHEIDEST.
+  ERZ   (0.8 s ab 00:44.88): Du entscheidest.
+  Geräusche:   Uhr-Ticken
+  Musik:       Stille (Musik aus)
+  Animation:   Rote Uhr, Countdown 3-2-1.  (Übergang: cut, Effekt: BLINK)
+
+SZENE 28  [00:46.43 – 00:49.30, 2.87 s]
+  Bild:        EXTRACTED_IMAGES/TEIL_2/original_1080x1920/szene_28.png
+  Text im Bild: –
+  ERZ   (2.5 s ab 00:46.51): Schreib A oder B in die Kommentare!
+  Geräusche:   tiefer Impact
+  Musik:       Abspann (Drone + Pad)
+  Animation:   Türkis umrandete Box pulsiert.  (Übergang: cut, Effekt: –)

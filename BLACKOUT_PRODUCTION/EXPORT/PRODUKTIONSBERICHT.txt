@@ -1,0 +1,105 @@
+BLACKOUT HAMBURG – PRODUKTIONSBERICHT
+=====================================
+
+1. FERTIGE DATEIEN (EXPORT/)
+----------------------------
+BLACKOUT_TEIL_1_FINAL.mp4        60,6 s · 1080x1920 · 30 fps · H.264 + AAC 48 kHz stereo · -15,0 LUFS
+BLACKOUT_TEIL_2_FINAL.mp4        49,3 s · 1080x1920 · 30 fps · H.264 + AAC 48 kHz stereo · -15,2 LUFS
+BLACKOUT_TEIL_1/2_UNTERTITEL.srt  Untertitel mit Sprecherkennzeichnung ([Funk], [Radio])
+BLACKOUT_TEIL_1/2_DREHBUCH.pdf    Drehbuch mit Vorschaubild, Sprecher, Text, Dauer, Geräuschen, Musik, Animation
+BLACKOUT_TEIL_1/2_DREHBUCH.txt    Drehbuch als Text
+BLACKOUT_TEIL_1/2_COVER.png       Titelbild
+BLACKOUT_TEIL_1/2_BESCHREIBUNG.txt Posting-Text mit Hashtags
+Nichts wurde veröffentlicht.
+
+2. EINGERICHTETE PROGRAMME UND VERBINDUNGEN
+-------------------------------------------
+[schon vorhanden] Python 3, Pillow 12.3, NumPy 2.5, ReportLab 5.0 (PDF)
+[schon vorhanden] FFmpeg 6.1.1 mit rubberband (Tonhöhe), loudnorm (Lautheit), libx264, AAC
+[neu installiert] piper-tts 1.8.0 (pip): lokale deutsche Sprachausgabe, kostenlos, offline, ohne Konto
+[neu geladen]     Piper-Stimmen aus den offiziellen GitHub-Releases von rhasspy/piper:
+                    karlsson (Erzähler, M-AILABS-Datensatz), thorsten (Jonas + Funkgerät, CC0),
+                    kerstin (Radiosprecherin, CC0)
+                    pavoque und ramona sind ebenfalls geladen, werden aber NICHT benutzt
+                    (pavoque: nicht-kommerzielle Lizenz, ramona: Lizenz unklar).
+[neu geladen]     Schrift Anton (SIL Open Font License)
+Test: Jede Stimme hat eine Probezeile erzeugt, und jede Pipeline-Stufe wurde mit echtem Export geprüft
+(siehe LOGS/).
+Einrichtung erneut ausführen: SCRIPTS/setup.sh
+
+3. NOCH FEHLENDE ANMELDUNGEN / BERECHTIGUNGEN
+---------------------------------------------
+Für die fertigen Videos ist keine Anmeldung nötig. Alles läuft lokal und kostenlos.
+
+Optional ElevenLabs (natürlichere Stimmen). Zurzeit NICHT verbunden, aus zwei Gründen:
+  a) Es ist kein API-Schlüssel hinterlegt.
+  b) Die Cloud-Umgebung blockiert den Host api.elevenlabs.io (Netzwerkregel).
+  So richtest du es ein, ohne den Schlüssel in den Chat zu schreiben:
+    1. Auf elevenlabs.io anmelden → Profil → API Keys → Schlüssel erstellen.
+    2. In claude.ai bei dieser Cloud-Umgebung (Umgebungsmenü in der Titelleiste → Edit):
+       - unter „Network access“ die Domain api.elevenlabs.io bei „Allowed domains“ erlauben
+       - den Schlüssel als Umgebungsvariable ELEVENLABS_API_KEY hinterlegen
+         (bei „Network secrets“/„API credentials“, falls vorhanden)
+       - optional Stimmen-IDs: ELEVENLABS_VOICE_ERZ, ELEVENLABS_VOICE_JON, ELEVENLABS_VOICE_FUNK, ELEVENLABS_VOICE_RADIO
+    3. Neue Sitzung starten. voices.py nutzt den Schlüssel dann automatisch. Diese Schnittstelle ist
+       vorbereitet, konnte aber ohne Schlüssel und ohne Netzwerkfreigabe nicht getestet werden.
+  Achtung: Der kostenlose ElevenLabs-Plan erlaubt laut Anbieterbedingungen keine kommerzielle Nutzung
+  (monetarisierte Kanäle). Dafür braucht es den Starter-Plan (ca. 5–6 $/Monat). Ich habe nichts gekauft.
+
+Hinweis: Diese Sitzung läuft in einer Cloud-Umgebung. Browserfenster auf deinem Gerät kann ich nicht
+öffnen. Anmeldungen machst du selbst auf der jeweiligen offiziellen Seite. Danach kann ich weiterarbeiten.
+
+4. AUFGETRETENE FEHLER UND LÖSUNGEN
+-----------------------------------
+- huggingface.co (Standardquelle für Piper-Stimmen) ist im Netzwerk gesperrt
+  → Stimmen aus den GitHub-Releases von Piper geladen (ältere Modelle mit 16 kHz).
+- api.elevenlabs.io gesperrt, kein Schlüssel → lokale Piper-Stimmen, ElevenLabs als Option vorbereitet.
+- Freesound und andere Soundbibliotheken nicht erreichbar → alle Geräusche und die Musik selbst
+  synthetisiert (audio_synth.py). Dadurch gibt es keine Rechte Dritter, und die Spur ist sicher für TikTok.
+- Erste Fassung war 79 s lang → Texte gestrafft, Sprechtempo erhöht, Pausen verkürzt → 60,6 s / 49,3 s.
+- Audiomischung hing (Faltung mit sehr langen Filtern) → gleitender Mittelwert über kumulative Summe.
+- Schritte-Geräusch: Parameterfehler (Kommazahl statt Anzahl) → korrigiert, Teil 2 neu gerendert.
+- Musik zuerst 20 dB unter der Stimme (zu leise) → um ca. 4 dB angehoben, jetzt 14–15 dB Abstand.
+
+5. ABLAUF UND PRÜFUNG
+---------------------
+Phase 1  Kontaktbögen zerlegt (EXTRACTED_IMAGES/), gelbe Nummern entfernt. Reihenfolge per
+         Bildvergleich mit den Originalen geprüft: korrekt (LOGS/phase1_extraktion.txt).
+         Hinweis: Teil 1 hat 35 Bilder, Teil 2 hat 28 (im Auftrag stand es umgekehrt).
+         Die Kontaktbögen enthalten nur Vorschaubilder (216x384). Für das Video werden die
+         Originalillustrationen in voller Auflösung aus dem Zeichencode benutzt, pixelgleich, keine
+         neue KI-Grafik. Stil und Figuren sind unverändert.
+Phase 2  Drehbücher und Timeline (PROJECT_FILES/TEIL_X/timeline.json/.csv).
+Phase 3  Werkzeuge geprüft (siehe Punkt 2 und 4).
+Phase 4  Stimmen:
+           Erzähler: Piper karlsson, tiefer gestimmt, mit Raumklang
+           Jonas: Piper thorsten, leicht höher
+           Funkgerät: tief gestimmt, Bandpass, Verzerrung und Rauschen
+           Radio: kerstin mit Radiofilter
+         Geräusche: Stromausfall, Schalter, Funkklick, Rauschen, Verbindungston, Klopfen, Klinke,
+         Schritte, Wind, Knarren, Akku-Warnton, Herzschlag, Radio, Kerze, Menschenmenge, Impacts,
+         Ticken, Riser. Musik: düsterer Drone, Spannungspuls, Streicher-Tremolo, Höhepunkte; sie wird
+         unter der Sprache automatisch leiser (Ducking).
+Phase 5  Animation Bild für Bild aus den Original-Illustrationen: Zoom und Kamerafahrt, Wackeln bei
+         Schreckmomenten, Blitz-Übergänge, Abblenden, Blinzeln, Atmen, Kerzenflackern, pulsierende LED,
+         laufende Menschenmenge, Kurbel, Rauch, Türklinke, Schatten unter der Tür.
+         Szenendauer richtet sich nach der Sprechlänge, Schlüsselmomente bekommen mehr Zeit.
+Phase 6  Qualitätskontrolle (LOGS/TEIL_X/qc.txt, qc_kontaktblatt.png aus dem echten Export):
+         Format, fps, Codecs, Länge, Lautheit, Übersteuerung und schwarze Ränder: alles OK.
+         Bildreihenfolge, Stil, Untertitel und Cliffhanger visuell geprüft.
+Phase 7  Export (EXPORT/).
+
+6. EHRLICHE EINSCHRÄNKUNGEN
+---------------------------
+- Ich kann den Ton nicht anhören. Geprüft habe ich nur die Messwerte (Pegel, Lautheit, Timing).
+  Die Piper-Stimmen sind verständlich, klingen aber hörbar synthetisch (16-kHz-Modelle). Wenn sie
+  natürlicher klingen sollen, richte ElevenLabs ein (Punkt 3) und lass neu rendern. Das dauert ca. 5 Minuten.
+- Teil 2 setzt Antwort A voraus. Wenn die Mehrheit B wählt, schreibe ich eine B-Fassung.
+- Der Wasser-Tipp (2 Liter pro Person und Tag, Vorrat für 10 Tage) und der Radio-Tipp folgen dem
+  BBK-Ratgeber Notfallvorsorge.
+
+7. ERNEUT RENDERN
+-----------------
+cd BLACKOUT_PRODUCTION/SCRIPTS
+python3 produce.py 1 && python3 produce.py 2 && python3 drehbuch_export.py && python3 qc.py
+Texte und Sprecher ändern: drehbuch_data.py · Bilder ändern: blackout_draw.py · Details: README.md

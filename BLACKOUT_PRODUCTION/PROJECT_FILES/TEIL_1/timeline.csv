@@ -1,0 +1,36 @@
+Szene;Start;Dauer;Text im Bild;Sprecher;Gesprochener Text;Musik;Geräusche
+1;0.00;2.97;BLACKOUT HAMBURG;ERZ;Blackout in Hamburg. Was würdest du tun?;dread;impact, wind
+2;2.97;1.43;21:47 UHR;ERZ;Du zockst gerade.;calm;game
+3;4.40;1.17;ZACK.;ERZ;Und dann: zack.;silence;power_down, impact
+4;5.57;1.33;NICHTS.;JON;Licht? … Nichts.;silence;switch
+5;6.90;1.70;DIE STRASSE…;ERZ;Die ganze Straße ist dunkel.;dread;wind
+6;8.60;1.63;GANZ HAMBURG.;ERZ;Ganz Hamburg.;dread;wind
+7;10.23;1.53;KEIN NETZ.;ERZ;Dein Handy: kein Netz.;dread;error
+8;11.77;2.20;23 %;ERZ;Akku: dreiundzwanzig Prozent.;dread;heartbeat
+9;13.97;1.63;KÜHLSCHRANK AUS.;ERZ;Der Kühlschrank ist aus.;dread;fridge
+10;15.60;1.73;TROPFEN.;ERZ;Aus dem Hahn: nur noch Tropfen.;dread;drips
+11;17.33;1.63;RUHIG BLEIBEN.;JON;Okay. Ruhig bleiben.;calm;match
+12;18.97;1.83;DIE REGEL:;ERZ;Erste Regel bei Stromausfall:;tension;
+13;20.80;2.17;RADIO AN.;ERZ;Batterie- oder Kurbelradio an.;tension;crank
+14;22.97;2.13;ECHTE REGEL!;ERZ;Empfiehlt auch der Katastrophenschutz.;tension;radio_tune
+15;25.10;1.63;BLEIBT ZUHAUSE.;RADIO;Bleiben Sie zu Hause!;tension;static
+16;26.73;1.60;23:12;ERZ;Eine Stunde später.;dread;wind
+17;28.33;1.43;KLOPF.;;;silence;knock
+18;29.77;1.37;WER… DA?;JON;Wer klopft um diese Zeit?;silence;heartbeat
+19;31.13;1.33;NIEMAND.;ERZ;Niemand.;dread;creak, wind
+20;32.47;2.70;OPAS KISTE.;ERZ;Dann: rotes Licht. Aus Opas Kiste.;tension;static
+21;35.17;1.73;DAS FUNKGERÄT.;ERZ;Opas altes Funkgerät.;tension;static
+22;36.90;1.07;ES IST AN.;JON;Es ist an?;tension;static
+23;37.97;2.23;KEINE BATTERIEN.;ERZ;Aber da sind keine Batterien drin.;silence;impact
+24;40.20;1.33;HÖRT MICH JEMAND?;FUNK;Hört mich jemand?;tension;squelch, static
+25;41.53;1.00;WAS?!;JON;Was?!;peak;impact
+26;42.53;1.63;NICHT ZUM ELBTUNNEL!;FUNK;Geht nicht zum Elbtunnel!;peak;static
+27;44.17;1.83;ALLE GEHEN…;ERZ;Aber draußen laufen alle los …;tension;crowd
+28;46.00;1.43;…ZUM TUNNEL.;ERZ;… genau zum Tunnel.;tension;crowd
+29;47.43;1.80;SIE WISSEN ES.;FUNK;Sie wissen, dass du zuhörst.;dread;static, heartbeat
+30;49.23;1.23;WOHER?!;JON;Woher wissen die das?!;peak;impact
+31;50.47;1.80;4 %;ERZ;Handy-Akku: vier Prozent.;tension;battery
+32;52.27;1.17;ANTWORTEN?;ERZ;Antwortest du?;tension;
+33;53.43;2.70;A ODER B?;ERZ;A: Du antwortest. B: Du schaltest es aus.;peak;riser
+34;56.13;1.63;DU ENTSCHEIDEST.;ERZ;Du entscheidest.;silence;tick
+35;57.77;2.87;;ERZ;Schreib A oder B in die Kommentare!;outro;impact

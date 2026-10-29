@@ -1,0 +1,10 @@
+QUALITÄTSKONTROLLE TEIL 1: BLACKOUT_TEIL_1_FINAL.mp4
+  [OK] Auflösung 1080x1920 (9:16): 1080x1920
+  [OK] 30 fps: 30/1
+  [OK] H.264 / yuv420p: h264 yuv420p
+  [OK] AAC-Ton: aac 48000 Hz 2 ch
+  [OK] Länge passt zur Timeline: 60.63 s (Timeline 60.63 s)
+  [OK] Lautheit ca. -14 LUFS: -15.0 LUFS
+  [OK] Keine Übersteuerung (True Peak < -0.5 dBFS): -3.8 dBFS
+  [OK] Keine schwarzen Ränder: Bildinhalt 1080x1920
+  Kontaktblatt: LOGS/TEIL_1/qc_kontaktblatt.png
